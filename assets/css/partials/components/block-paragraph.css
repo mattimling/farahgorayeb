@@ -1,0 +1,7 @@
+.block-paragraph li:before {
+  @apply content-['—'] mr-2;
+}
+
+.block-paragraph p a {
+  @apply link-underline;
+}

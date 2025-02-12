@@ -1,0 +1,11 @@
+.text-pr-xl {
+  @apply font-nh text-[24px] lg:text-[27px] uppercase leading-[1.15];
+}
+
+.text-pr-md {
+  @apply font-nr text-[18px] lg:text-[20px] leading-[1.25];
+}
+
+.text-pr-sm {
+  @apply font-nr text-[16px] leading-[1.15];
+}

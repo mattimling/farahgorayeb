@@ -1,0 +1,4 @@
+.block-hero-image + .block-project-details,
+.block-hero-image + .block-quote {
+  @apply -mt-[calc(160px-100px)] lg:-mt-[calc(160px-20px)];
+}

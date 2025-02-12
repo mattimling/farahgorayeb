@@ -1,0 +1,47 @@
+html {
+}
+
+body {
+  /* -webkit-font-smoothing: antialiased; */
+  text-rendering: geometricPrecision;
+}
+
+body::-webkit-scrollbar {
+  @apply w-1 transition-all duration-300;
+}
+
+body.menu-is-open::-webkit-scrollbar {
+  @apply bg-charcoal;
+}
+
+body::-webkit-scrollbar-thumb {
+  @apply bg-gold;
+}
+
+svg {
+  @apply w-full h-auto;
+}
+
+.prevent-children {
+  @apply [&_*]:pointer-events-none;
+}
+
+.hover-gold path {
+  @apply transition-all duration-150;
+}
+
+.hover-gold:hover path {
+  @apply fill-gold;
+}
+
+/* Hide dev messages */
+#hostinger-preview-banner,
+.otgs-development-site-front-end {
+  display: hidden !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  position: fixed;
+  top: -9999px !important;
+  left: -9999px !important;
+  z-index: -9999;
+}

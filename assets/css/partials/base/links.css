@@ -1,0 +1,60 @@
+.link-no-underline {
+  @apply self-start transition-all duration-150 relative border-b border-transparent;
+}
+
+.link-no-underline:hover {
+  @apply border-b border-[inherit];
+}
+
+.link-arrow-right,
+.link-arrow-down,
+.link-arrow-up,
+.link-underline {
+  @apply border-b self-start transition-all duration-150 relative;
+}
+
+.link-arrow-right:after,
+.link-arrow-down:after,
+.link-arrow-up:after {
+  @apply absolute ml-1 transition-all duration-150 ease-out;
+}
+
+.link-arrow-right:after {
+  @apply content-['→'];
+}
+
+.link-arrow-down:after {
+  @apply content-['↓'] -top-[2px];
+}
+
+.link-arrow-up:after {
+  @apply content-['↑'] -top-[1px];
+}
+
+.link-arrow-right:hover,
+.link-arrow-down:hover,
+.link-arrow-up:hover {
+  @apply border-transparent text-gold;
+}
+
+.link-arrow-right:hover:after {
+  @apply ml-2;
+}
+
+.link-button-white,
+.link-button-arrow,
+.link-button-charcoal {
+  @apply text-pr-sm border rounded-full px-10 py-4 transition-all duration-300 ease-in-out;
+}
+
+.link-button-white {
+  @apply hover:bg-white hover:text-charcoal;
+}
+
+.link-button-charcoal {
+  @apply hover:bg-charcoal hover:text-white;
+}
+
+.link-button-arrow {
+  @apply hover:bg-charcoal hover:text-white pr-14;
+}

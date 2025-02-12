@@ -1,0 +1,22 @@
+/* Base */
+@import "partials/base/fonts.css";
+@import "partials/base/global.css";
+@import "partials/base/dev.css";
+@import "partials/base/fonts.css";
+@import "partials/base/links.css";
+@import "partials/base/typography.css";
+
+/* Components */
+@import "partials/components/element-appear.css";
+@import "partials/components/block-paragraph.css";
+@import "partials/components/block-project-details.css";
+@import "partials/components/blog.css";
+@import "partials/components/content-page.css";
+
+/* Config */
+@config './tailwind.config.js';
+
+/* Tailwind */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

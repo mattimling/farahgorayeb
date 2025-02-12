@@ -1,0 +1,23 @@
+@font-face {
+  font-family: "nr";
+  src: url("../fonts/nr.woff2") format("woff2"),
+    url("../fonts/nr.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "nri";
+  src: url("../fonts/nri.woff2") format("woff2"),
+    url("../fonts/nri.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "nh";
+  src: url("../fonts/nh.woff2") format("woff2"),
+    url("../fonts/nh.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
