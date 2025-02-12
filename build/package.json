@@ -1,0 +1,15 @@
+{
+    "name": "farahgorayeb",
+    "version": "1.0.0",
+    "main": "index.js",
+    "author": "",
+    "license": "ISC",
+    "description": "",
+    "scripts": {
+        "build": "npx tailwindcss -c ./../assets/css/tailwind.config.js -i ./../assets/css/tailwind.css -o ./../assets/css/style.css --minify",
+        "dev": "npx tailwindcss -c ./../assets/css/tailwind.config.js -i ./../assets/css/tailwind.css -o ./../assets/css/style.css --minify --watch"
+    },
+    "devDependencies": {
+        "tailwindcss": "^3.4.15"
+    }
+}
