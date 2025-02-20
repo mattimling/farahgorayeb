@@ -10,12 +10,8 @@ body::-webkit-scrollbar {
   @apply w-1 transition-all duration-300;
 }
 
-body.menu-is-open::-webkit-scrollbar {
-  @apply bg-charcoal;
-}
-
 body::-webkit-scrollbar-thumb {
-  @apply bg-gold;
+  @apply bg-black;
 }
 
 svg {
@@ -24,14 +20,6 @@ svg {
 
 .prevent-children {
   @apply [&_*]:pointer-events-none;
-}
-
-.hover-gold path {
-  @apply transition-all duration-150;
-}
-
-.hover-gold:hover path {
-  @apply fill-gold;
 }
 
 /* Hide dev messages */

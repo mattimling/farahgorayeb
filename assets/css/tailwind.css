@@ -8,10 +8,8 @@
 
 /* Components */
 @import "partials/components/element-appear.css";
-@import "partials/components/block-paragraph.css";
-@import "partials/components/block-project-details.css";
-@import "partials/components/blog.css";
-@import "partials/components/content-page.css";
+@import "partials/components/element-pushedback.css";
+@import "partials/components/element-blurin.css";
 
 /* Config */
 @config './tailwind.config.js';
