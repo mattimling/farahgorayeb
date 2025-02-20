@@ -40,8 +40,12 @@ add_action( 'wp_enqueue_scripts', function () {
 		'preloader',
 		'lenis-scroll',
 		'barba-page-transition',
-		// 'slider-gallery',
 		'if-function-exist',
+		'hero-gallery',
+		'menu',
+		'element-pushedback',
+		'element-blurin',
+		'footer-link',
 	];
 
 	// Define External JS files to enqueue

@@ -4,66 +4,92 @@ $copyright = get_field( 'copyright', 'options' );
 
 ?>
 
-<div class="flex max-md:flex-col max-md:items-center max-md:gap-y-3 justify-between p-5 text-[15px] <?= is_front_page() ? 'bg-charcoal text-gold' : ''; ?>">
+<div class="bg-peach p-5 pt-[60px] js-footer-links footer-links [&.is-hovered]:bg-peachDark transition-all duration-700 ease-in-out">
 
-	<!-- Copyright -->
-	<div class="<?= is_front_page() ? 'opacity-30' : 'opacity-50'; ?> flex gap-x-5">
+	<!-- Menus -->
+	<div class="grid grid-cols-12 gap-x-5 gap-y-[60px]">
 
-		<?= $copyright; ?>
+		<?php if ( have_rows( 'menus', 'options' ) ) : ?>
 
-	</div>
+			<?php while ( have_rows( 'menus', 'options' ) ) :
+				the_row();
 
-	<!-- Menu -->
-	<div class="flex gap-x-5 max-md:flex-col max-md:items-center max-md:gap-y-3">
+				$title = get_sub_field( 'title' );
+				$type = get_sub_field( 'type' );
+				$text = get_sub_field( 'text' );
+				?>
 
-		<div class="flex gap-x-5 max-md:order-2">
+				<div class="col-span-12 md:col-span-6 2xl:col-span-3 grid grid-cols-3 js-element-blurin">
 
-			<?php if ( have_rows( 'socials_menu', 'options' ) ) : ?>
+					<div class="col-span-1">
+						<?= $title; ?>
+					</div>
 
-				<?php while ( have_rows( 'socials_menu', 'options' ) ) :
-					the_row();
+					<div class="col-span-2">
 
-					$link = get_sub_field( 'link' );
-					$icon = get_sub_field( 'icon' );
-					?>
+						<?php if ( $type == 'menu' ) : ?>
 
-					<?php if ( $link ) : ?>
+							<?php if ( have_rows( 'menu', 'options' ) ) : ?>
 
-						<?php if ( $icon ) : ?>
+								<div class="flex flex-col gap-y-1">
 
-							<a href="<?= $link['url'] ?>" class="transition-all duration-150 hover:opacity-100 <?= is_front_page() ? 'opacity-30' : 'opacity-50'; ?>" target="<?= $link['target']; ?>" aria-label="<?= $link['title']; ?>">
-								<span class="<?= is_front_page() ? '[&_path]:fill-gold' : '[&_path]:fill-charcoal'; ?>">
-									<?= $icon; ?>
-								</span>
-							</a>
+									<?php while ( have_rows( 'menu', 'options' ) ) :
+										the_row();
+
+										$link = get_sub_field( 'link' );
+										?>
+
+										<?= mi_get_link( $link, 'self-start' ); ?>
+
+									<?php endwhile; ?>
+
+								</div>
+
+							<?php endif; ?>
+
+						<?php else : ?>
+
+							<div class="flex flex-col gap-y-[6px]">
+								<?= $text; ?>
+							</div>
 
 						<?php endif; ?>
 
-					<?php endif; ?>
+					</div>
 
-				<?php endwhile; ?>
+				</div>
 
-			<?php endif; ?>
+			<?php endwhile; ?>
+
+		<?php endif; ?>
+
+	</div>
+
+	<!-- Title -->
+	<div class="py-40 js-element-blurin">
+		<div class="text-h1 flex justify-between flex-wrap">
+			<div class="mr-2">
+				Farah Gorayeb /
+			</div>
+			<div class="">
+				Interior Design Studio
+			</div>
 
 		</div>
+	</div>
 
-		<div class="flex gap-x-5 gap-y-3 max-md:order-1 flex-wrap justify-center items-center">
+	<!-- Copyright -->
+	<div class="flex justify-between">
 
-			<?php if ( have_rows( 'footer_menu', 'options' ) ) : ?>
+		<div class="">
+			<?= $copyright; ?>
+		</div>
 
-				<?php while ( have_rows( 'footer_menu', 'options' ) ) :
-					the_row();
-
-					$link = get_sub_field( 'link' );
-					$classes = is_front_page() ? 'opacity-30' : 'opacity-50';
-					?>
-
-					<?= mi_get_link( $link, 'link-no-underline hover:opacity-100 ' . $classes ); ?>
-
-				<?php endwhile; ?>
-
-			<?php endif; ?>
-
+		<div class="">
+			By
+			<a href="http://emelecollab.com/" class="footer-link">
+				Emele Collab
+			</a>
 		</div>
 
 	</div>

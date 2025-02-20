@@ -19,7 +19,7 @@ $required_functions = [
 	'custom-image-size',
 	'responsive-images',
 	// 'tinymce-custom-styles',
-	// 'is-page-descendant',
+	'is-page-descendant',
 	// 'wp-nav-menu.php',
 	// 'wpml.php',
 ];
