@@ -8,7 +8,7 @@
 
 <?php if ( class_exists( 'ACF' ) ) : ?>
 
-	<div class="flex flex-col gap-y-20 lg:gap-y-40 py-20 lg:py-40 mt-20">
+	<div class="flex flex-col">
 
 		<?php get_template_part( 'components/acf-blocks/index' ); ?>
 
