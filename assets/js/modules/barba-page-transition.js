@@ -55,12 +55,14 @@ function barbaPageTransition() {
                     // Start lenis scroll
                     lenis.start();
 
+                    ifFunctionExist('footerLink');
+
                 }
             });
         }, transitionDelay / 4);
 
-        ifFunctionExist('sliderGallery');
-        ifFunctionExist('homeVideo', false);
+        ifFunctionExist('heroGallery');
+        ifFunctionExist('elementBlurin');
 
     }
 

@@ -1,7 +1,7 @@
 function lenisScroll() {
 
     lenis = new Lenis({
-        lerp: 0.15
+        // lerp: 0.15
     });
 
     function raf(time) {
