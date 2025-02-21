@@ -35,8 +35,8 @@ add_filter( 'big_image_size_threshold', '__return_false' );
 
 // Make 'xl' and 'large_1280' sizes selectable in the WordPress Media Library (optional).
 function add_custom_image_size_to_media_selector( $sizes ) {
-	$sizes['xl'] = __( 'Extra Large (2048px)', 'ferpoz' );
-	// $sizes['md'] = __( 'Medium (1280px)', 'ferpoz' );
+	$sizes['xl'] = __( 'Extra Large (2048px)', 'fargor' );
+	// $sizes['md'] = __( 'Medium (1280px)', 'fargor' );
 	return $sizes;
 }
 add_filter( 'image_size_names_choose', 'add_custom_image_size_to_media_selector' );

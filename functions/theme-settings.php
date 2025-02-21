@@ -7,7 +7,7 @@ add_theme_support( 'custom-logo' );
 // Register main menu for Wordpress use.
 register_nav_menus(
 	array(
-		'primary' => __( 'Primary Menu', 'ferpoz' ),
+		'primary' => __( 'Primary Menu', 'fargor' ),
 	)
 );
 
