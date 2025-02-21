@@ -5,3 +5,7 @@
 .text-h1 {
   @apply font-b leading-[1] tracking-tighter text-[calc(2.5rem+2vw)];
 }
+
+.text-h2 {
+  @apply font-b leading-[1] tracking-tighter text-[calc(2rem+1.5vw)];
+}
