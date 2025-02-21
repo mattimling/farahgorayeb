@@ -38,7 +38,7 @@ $preloader = is_localhost() ? 0 : 1;
 	if ( is_localhost() ) {
 		get_template_part( 'components/dev/tailwind-breakpoints' );
 
-		// get_template_part( 'components/dev/menu' );
+		get_template_part( 'components/dev/menu' );
 	}
 
 	// Preloader only if preloader = true
@@ -54,10 +54,10 @@ $preloader = is_localhost() ? 0 : 1;
 
 	?>
 
+	<?php get_template_part( 'components/header/header-bar' ); ?>
+
 	<div class="page-wrapper js-page-wrapper" style="<?= $preloader ? 'display: none;' : ''; ?>">
 
 		<main data-barba="js-barba-content" data-barba-namespace="<?= $wp_query->queried_object->post_name ?>">
 
-			<?php get_template_part( 'components/header/header-bar' ); ?>
-
-			<div class="content-wrapper js-content-wrapper relative js-page-transition [&.is-blurry]:blur-[10px] transition-all duration-700 ease-in-out">
+			<div class="content-wrapper js-content-wrapper relative [&.is-blurry]:blur-[10px] transition-all duration-700 ease-in-out">
