@@ -1,0 +1,102 @@
+.pflo-grid {
+  counter-reset: section;
+}
+
+.pflo-grid-item,
+.swrm-grid-item {
+  counter-increment: section;
+}
+
+.pflo-grid-item-title {
+  @apply flex;
+}
+
+.pflo-grid-item-title:before {
+  content: counter(section, decimal-leading-zero) " /";
+  @apply mr-5;
+}
+
+/* Portfolio ======================================================================================================== */
+
+/* 2XL = 4 */
+.pflo-grid-item.pflo:nth-child(6n + 2),
+.pflo-grid-item.pflo:nth-child(6n + 5) {
+  @apply 2xl:col-span-6;
+}
+
+.pflo-grid-item.pflo:nth-child(6n + 2) .pflo-grid-item-inner,
+.pflo-grid-item.pflo:nth-child(6n + 5) .pflo-grid-item-inner {
+  @apply 2xl:w-[calc(50%-10px)];
+}
+
+.pflo-grid-item.pflo:nth-child(6n + 5) .pflo-grid-item-inner {
+  @apply self-end;
+}
+
+/* LG = 3 */
+.pflo-grid-item.pflo:nth-child(4n + 1) {
+  @apply lg:max-2xl:col-span-8;
+}
+
+.pflo-grid-item.pflo:nth-child(4n + 1) .pflo-grid-item-inner {
+  @apply lg:max-2xl:w-[calc(50%-10px)];
+}
+
+/* Showroom ========================================================================================================= */
+
+/* 2XL = 6*/
+.pflo-grid-item.swrm:nth-child(5n + 3) {
+  @apply 2xl:col-span-4;
+}
+
+.pflo-grid-item.swrm:nth-child(5n + 3) .pflo-grid-item-inner {
+  @apply 2xl:w-[calc(50%-10px)];
+}
+
+.pflo-grid-item.swrm .pflo-grid-item-inner {
+  @apply 2xl:self-end;
+}
+
+.pflo-grid-item.swrm:nth-child(10n + 3) .pflo-grid-item-inner {
+  @apply 2xl:self-start;
+}
+
+/* LG = 4 */
+.pflo-grid-item.swrm:nth-child(6n + 2),
+.pflo-grid-item.swrm:nth-child(6n + 5) {
+  @apply lg:max-2xl:col-span-6;
+}
+
+.pflo-grid-item.swrm:nth-child(6n + 2) .pflo-grid-item-inner,
+.pflo-grid-item.swrm:nth-child(6n + 5) .pflo-grid-item-inner {
+  @apply lg:max-2xl:w-[calc(50%-10px)];
+}
+
+.pflo-grid-item.swrm:nth-child(6n + 5) .pflo-grid-item-inner {
+  @apply lg:max-2xl:self-end;
+}
+
+/* LG = 3 */
+.pflo-grid-item.swrm:nth-child(4n + 1) {
+  @apply sm:max-lg:col-span-8;
+}
+
+.pflo-grid-item.swrm:nth-child(4n + 1) .pflo-grid-item-inner {
+  @apply sm:max-lg:w-[calc(50%-10px)] sm:max-lg:self-end;
+}
+
+.pflo-grid-item.swrm:nth-child(8n + 1) {
+  @apply sm:max-lg:self-start;
+}
+.pflo-grid-item.swrm:nth-child(8n + 1) .pflo-grid-item-inner {
+  @apply sm:max-lg:self-start;
+}
+
+/* ================================================================================================================== */
+.pflo-grid-item-img {
+}
+
+.pflo-grid-item-img div {
+  backdrop-filter: blur(10px);
+  mask-image: radial-gradient(circle, black 25%, transparent 50%);
+}

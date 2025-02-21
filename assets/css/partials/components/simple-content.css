@@ -1,0 +1,7 @@
+.simple-content h2 {
+  @apply text-h2;
+}
+
+.simple-content h2 strong {
+  @apply font-normal;
+}
