@@ -54,6 +54,7 @@ function barbaPageTransition() {
         setTimeout(timer => {
             ifFunctionExist('heroGallery');
             ifFunctionExist('elementBlurin');
+            ifFunctionExist('imageImageHeight');
         }, 10);
 
     }

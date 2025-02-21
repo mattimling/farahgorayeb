@@ -8,15 +8,15 @@ $order = get_sub_field( 'order' );
 
 ?>
 
-<div class="px-5 grid grid-cols-12 gap-5">
+<div class="px-5 grid grid-cols-12 gap-x-5 gap-y-[60px] js-image-image">
 
-	<div class="<?= $order == 'big-small' ? '' : 'order-2'; ?> col-span-12 md:col-span-6 pointer-events-none flex flex-col gap-y-[10px] bred">
+	<div class="<?= $order == 'big-small' ? '' : 'order-2'; ?> col-span-12 md:col-span-6 pointer-events-none flex flex-col gap-y-[10px]">
 
 		<?= mi_get_image( $image_1, 'xl', 'w-full js-element-blurin-scale js-depth-push' ); ?>
 
 		<?php if ( $image_big_description || $image_small_description ) : ?>
 
-			<div class="text-black [&_strong:first-child]:mr-5 [&_strong:first-child]:font-normal js-element-blurin w-full">
+			<div class="text-black [&_strong:first-child]:mr-5 [&_strong:first-child]:font-normal js-element-blurin w-full js-image-desc">
 				<?= $image_big_description; ?>
 			</div>
 
@@ -30,7 +30,7 @@ $order = get_sub_field( 'order' );
 
 		<?php if ( $image_small_description || $image_big_description ) : ?>
 
-			<div class="text-black [&_strong:first-child]:mr-5 [&_strong:first-child]:font-normal js-element-blurin w-full md:w-3/4 lg:w-1/2 text-left">
+			<div class="text-black [&_strong:first-child]:mr-5 [&_strong:first-child]:font-normal js-element-blurin w-full md:w-3/4 lg:w-1/2 text-left js-image-desc">
 				<?= $image_small_description; ?>
 			</div>
 
