@@ -23,3 +23,44 @@ function heroGallery() {
 }
 
 heroGallery();
+
+
+
+
+
+
+
+
+function heroParallax() {
+    const hero = document.querySelector('.js-hero');
+    const heroInner = document.querySelector('.js-hero-inner');
+
+    if (!hero || !heroInner) return;
+
+    // Apply smooth easing when the element moves
+    hero.addEventListener('mousemove', (event) => {
+        const { left, top, width, height } = hero.getBoundingClientRect();
+        const mouseX = event.clientX - left;
+        const mouseY = event.clientY - top;
+
+        // Calculate the percentage of the mouse's position within the hero container
+        const percentX = (mouseX / width) - 1; // From -0.5 to 0.5
+        const percentY = (mouseY / height) - 1; // From -0.5 to 0.5
+
+        // Apply the transformation to the inner container with enhanced movement strength
+        const movementStrength = 30; // Increased movement strength
+        const movementX = percentX * movementStrength;
+        const movementY = percentY * movementStrength;
+
+        heroInner.style.transition = 'transform 1s ease-out'; // Smooth easing transition
+        heroInner.style.transform = `translate(${movementX}px, ${movementY}px)`;
+    });
+
+    // Reset the transform when the mouse leaves
+    /* hero.addEventListener('mouseleave', () => {
+        heroInner.style.transition = 'transform 0.3s ease-in-out'; // Smooth reset transition
+        heroInner.style.transform = 'translate(0, 0)';
+    }); */
+}
+
+// heroParallax();

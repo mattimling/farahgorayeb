@@ -46,6 +46,8 @@ add_action( 'wp_enqueue_scripts', function () {
 		'element-pushedback',
 		'element-blurin',
 		'footer-link',
+		'footer-title',
+		'portfolio',
 	];
 
 	// Define External JS files to enqueue

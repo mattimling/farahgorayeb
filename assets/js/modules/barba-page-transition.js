@@ -2,10 +2,8 @@ function barbaPageTransition() {
 
     const transitionDelay = 500,
         transitionEasing = 'easeOutCubic',
-        transitionTarget = document.querySelector('.js-page-transition'),
-        transitionTargetLogo = document.querySelector('.js-page-transition-logo'),
-        opacity = 1,
-        transitionY = 20,
+        transitionTarget = document.querySelector('.js-page-wrapper'),
+        transitionY = 30,
         delay = (ms = transitionDelay * 2) => new Promise(resolve => setTimeout(resolve, ms));
 
     function to(data) {
@@ -16,17 +14,11 @@ function barbaPageTransition() {
         // Animate fade out
         anime({
             targets: transitionTarget,
-            opacity: [0, 1],
+            opacity: [1, 0],
+            translateY: [0, -transitionY],
+            filter: ['blur(0px)', 'blur(5px)'],
             easing: transitionEasing,
             duration: transitionDelay,
-        });
-
-        anime({
-            targets: transitionTargetLogo,
-            opacity: [0, 1],
-            easing: transitionEasing,
-            duration: transitionDelay,
-            delay: transitionDelay / 4,
         });
 
     }
@@ -38,31 +30,31 @@ function barbaPageTransition() {
 
         // Animate fade in
         anime({
-            targets: transitionTargetLogo,
-            opacity: [1, 0],
+            targets: transitionTarget,
+            opacity: [0, 1],
+            translateY: [transitionY, 0],
+            filter: ['blur(5px)', 'blur(0px)'],
             easing: transitionEasing,
-            duration: transitionDelay / 2,
+            duration: transitionDelay,
+            complete: function () {
+
+                // Start lenis scroll
+                lenis.start();
+
+                ifFunctionExist('footerLink');
+                ifFunctionExist('footerTitle');
+                ifFunctionExist('pfloFilter');
+
+                transitionTarget.style.transform = '';
+
+            }
         });
 
-        setTimeout(event => {
-            anime({
-                targets: transitionTarget,
-                opacity: [1, 0],
-                easing: transitionEasing,
-                duration: transitionDelay,
-                complete: function () {
 
-                    // Start lenis scroll
-                    lenis.start();
-
-                    ifFunctionExist('footerLink');
-
-                }
-            });
-        }, transitionDelay / 4);
-
-        ifFunctionExist('heroGallery');
-        ifFunctionExist('elementBlurin');
+        setTimeout(timer => {
+            ifFunctionExist('heroGallery');
+            ifFunctionExist('elementBlurin');
+        }, 10);
 
     }
 
