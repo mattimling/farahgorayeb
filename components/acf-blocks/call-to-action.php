@@ -7,9 +7,9 @@ $link = get_sub_field( 'link' );
 
 ?>
 
-<div class="w-full md:aspect-video xl:aspect-[1500/600] overflow-hidden relative flex flex-col justify-between px-5 py-[60px]">
+<div class="w-full md:aspect-video xl:aspect-[1500/600] overflow-hidden relative flex flex-col justify-between px-5 py-[60px] -mb-[60px]">
 
-	<div class="absolute top-0 left-0 w-full h-full">
+	<div class="absolute top-0 left-0 w-full h-full js-element-blurin pointer-events-none">
 		<?= mi_get_image( $image, 'xl', 'w-full h-full object-cover' ); ?>
 	</div>
 
@@ -19,7 +19,7 @@ $link = get_sub_field( 'link' );
 
 		<div class="relative z-10 grid grid-cols-12 gap-x-5 max-md:pb-40 <?= ( $order == 'paragraph-title' ) ? 'order-1' : ''; ?> js-element-blurin">
 
-			<div class="col-span-12 md:col-span-6 lg:col-span-4 2xl:col-span-3">
+			<div class="col-span-12 md:col-span-6 lg:col-span-6 2xl:col-span-3">
 
 				<?php if ( $paragraph_title ) : ?>
 					<span class="pr-5">

@@ -6,44 +6,48 @@ $video_link = get_sub_field( 'video_link' );
 
 ?>
 
-<div class="w-full h-[100dvh]">
+<div class="w-full h-[100dvh] -mt-[calc(71px+60px)] js-hero prevent-children overflow-hidden">
 
-	<?php if ( $video_link ) : ?>
+	<div class="js-hero-inner">
 
-		<div class="h-full">
+		<?php if ( $video_link ) : ?>
 
-			<video preload="metadata" loop muted autoplay playsinline class="w-full h-full object-cover">
-				<source src="<?= $video_link ?>" type="video/mp4">
-			</video>
+			<div class="h-full">
 
-		</div>
+				<video preload="metadata" loop muted autoplay playsinline class="w-full h-full object-cover">
+					<source src="<?= $video_link ?>" type="video/mp4">
+				</video>
 
-	<?php else : ?>
+			</div>
 
-		<div class="h-full">
+		<?php else : ?>
 
-			<?php if ( count( $gallery ) == 1 ) : ?>
+			<div class="h-full pointer-events-noneX">
 
-				<?= mi_get_image( $gallery[0], 'xl', 'w-full h-full object-cover' ); ?>
+				<?php if ( count( $gallery ) == 1 ) : ?>
 
-			<?php else : ?>
+					<?= mi_get_image( $gallery[0], 'xl', 'w-full h-full object-cover' ); ?>
 
-				<div class="w-full h-full relative js-hero-gallery" data-gallery-timeout="<?= ! empty( $gallery_timeout ) ? $gallery_timeout : '3'; ?>">
+				<?php else : ?>
 
-					<?php foreach ( $gallery as $image ) : ?>
+					<div class="w-full h-full relative js-hero-gallery" data-gallery-timeout="<?= ! empty( $gallery_timeout ) ? $gallery_timeout : '3'; ?>">
 
-						<div class="w-full h-full absolute top-0 left-0 js-hero-gallery-image transition-opacity duration-1000">
-							<?= mi_get_image( $image, 'xl', 'w-full h-full object-cover' ); ?>
-						</div>
+						<?php foreach ( $gallery as $image ) : ?>
 
-					<?php endforeach; ?>
+							<div class="w-full h-full absolute top-0 left-0 js-hero-gallery-image transition-opacity duration-1000">
+								<?= mi_get_image( $image, 'xl', 'w-full h-full object-cover' ); ?>
+							</div>
 
-				</div>
+						<?php endforeach; ?>
 
-			<?php endif; ?>
+					</div>
 
-		</div>
+				<?php endif; ?>
 
-	<?php endif; ?>
+			</div>
+
+		<?php endif; ?>
+
+	</div>
 
 </div>

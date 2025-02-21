@@ -7,7 +7,7 @@ $order = get_sub_field( 'order' );
 
 ?>
 
-<div class="px-5 flex flex-col gap-y-[60px] py-[60px]">
+<div class="px-5 flex flex-col gap-y-[60px] Xpy-[60px]">
 
 	<?php if ( $title ) : ?>
 
@@ -25,7 +25,7 @@ $order = get_sub_field( 'order' );
 
 		<div class="grid grid-cols-12 gap-x-5 <?= ( $order == 'paragraph-title' ) ? 'order-1' : ''; ?> js-element-blurin">
 
-			<div class="col-span-12 md:col-span-6 lg:col-span-4 2xl:col-span-3">
+			<div class="col-span-12 md:col-span-6 lg:col-span-6 2xl:col-span-3">
 
 				<?php if ( $paragraph_title ) : ?>
 					<span class="pr-5">
