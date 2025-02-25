@@ -86,7 +86,7 @@ $gallery = get_field( 'gallery', 'options' );
 
 			<?php if ( $gallery ) : ?>
 
-				<div class="aspect-[124/156] js-footer-title-image relative">
+				<div class="aspect-[124/156] js-footer-title-image relative transition-all duration-[50ms] ease-in-out">
 
 					<?php foreach ( $gallery as $image ) : ?>
 

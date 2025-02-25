@@ -14,7 +14,7 @@ function footerTitle() {
     // Apply initial styles for smooth transitions
     images.forEach((img, i) => {
         img.style.opacity = i === 0 ? '1' : '0';
-        img.style.transition = 'opacity 0.5s ease-in-out';
+        img.style.transition = 'opacity 0.3s ease-in-out';
     });
 
     // Function to handle mouse follow effect on desktop
