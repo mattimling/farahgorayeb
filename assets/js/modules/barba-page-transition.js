@@ -55,6 +55,7 @@ function barbaPageTransition() {
             ifFunctionExist('heroGallery');
             ifFunctionExist('elementBlurin');
             ifFunctionExist('imageImageHeight');
+            ifFunctionExist('prevNextHoverEffect');
         }, 10);
 
     }
