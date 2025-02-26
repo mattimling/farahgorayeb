@@ -30,7 +30,7 @@ add_action( 'wp_enqueue_scripts', function () {
 		'anime.min',
 		// 'barba_core-2.9.7',
 		'barba_core-2.10.3',
-		// 'swiper-bundle.min',
+		'swiper-bundle.min',
 	];
 
 	// Define Module JS files to enqueue
@@ -50,6 +50,7 @@ add_action( 'wp_enqueue_scripts', function () {
 		'portfolio',
 		'image-image',
 		'prev-next',
+		'projects-slider',
 	];
 
 	// Define External JS files to enqueue

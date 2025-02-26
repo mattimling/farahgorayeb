@@ -32,6 +32,12 @@
 		elseif ( get_row_layout() == 'simple_content' ) :
 			get_template_part( 'components/acf-blocks/simple-content' );
 
+		elseif ( get_row_layout() == 'portfolio_slider' ) :
+			get_template_part( 'components/acf-blocks/portfolio-slider' );
+
+		elseif ( get_row_layout() == 'showroom_slider' ) :
+			get_template_part( 'components/acf-blocks/showroom-slider' );
+
 		endif;
 
 		?>

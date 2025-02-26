@@ -44,6 +44,7 @@ function barbaPageTransition() {
                 ifFunctionExist('footerLink');
                 ifFunctionExist('footerTitle');
                 ifFunctionExist('pfloFilter');
+                ifFunctionExist('projectsSlider');
 
                 transitionTarget.style.transform = '';
 

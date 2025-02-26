@@ -470,6 +470,60 @@
                     "min": "",
                     "max": ""
                 },
+                "layout_67bef590a74df": {
+                    "key": "layout_67bef590a74df",
+                    "name": "portfolio_slider",
+                    "label": "Portfolio Slider",
+                    "display": "row",
+                    "sub_fields": [
+                        {
+                            "key": "field_67bef598a74e1",
+                            "label": "Projects",
+                            "name": "projects",
+                            "aria-label": "",
+                            "type": "post_object",
+                            "instructions": "Select project or projects to show in slider.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "post_type": [
+                                "portfolio"
+                            ],
+                            "post_status": "",
+                            "taxonomy": "",
+                            "return_format": "object",
+                            "multiple": 1,
+                            "allow_null": 0,
+                            "allow_in_bindings": 0,
+                            "bidirectional": 0,
+                            "ui": 1,
+                            "bidirectional_target": []
+                        },
+                        {
+                            "key": "field_67bf64141a978",
+                            "label": "Link",
+                            "name": "link",
+                            "aria-label": "",
+                            "type": "link",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array",
+                            "allow_in_bindings": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
                 "layout_67b8459d1e449": {
                     "key": "layout_67b8459d1e449",
                     "name": "showroom",
@@ -496,6 +550,60 @@
                             "ui": 0,
                             "ui_on_text": "",
                             "ui_off_text": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_67bef60a197ad": {
+                    "key": "layout_67bef60a197ad",
+                    "name": "showroom_slider",
+                    "label": "Showroom Slider",
+                    "display": "row",
+                    "sub_fields": [
+                        {
+                            "key": "field_67bef60a197b2",
+                            "label": "Products",
+                            "name": "products",
+                            "aria-label": "",
+                            "type": "post_object",
+                            "instructions": "Select product or products to show in slider.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "post_type": [
+                                "showroom"
+                            ],
+                            "post_status": "",
+                            "taxonomy": "",
+                            "return_format": "object",
+                            "multiple": 1,
+                            "allow_null": 0,
+                            "allow_in_bindings": 0,
+                            "bidirectional": 0,
+                            "ui": 1,
+                            "bidirectional_target": []
+                        },
+                        {
+                            "key": "field_67bf641f1a979",
+                            "label": "Link",
+                            "name": "link",
+                            "aria-label": "",
+                            "type": "link",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array",
+                            "allow_in_bindings": 0
                         }
                     ],
                     "min": "",
@@ -714,5 +822,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1740149313
+    "modified": 1740596262
 }

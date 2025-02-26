@@ -1,9 +1,11 @@
-.pflo-grid {
+.pflo-grid,
+.projects-slider {
   counter-reset: section;
 }
 
 .pflo-grid-item,
-.swrm-grid-item {
+.swrm-grid-item,
+.projects-slider-item {
   counter-increment: section;
 }
 
@@ -11,7 +13,8 @@
   @apply flex;
 }
 
-.pflo-grid-item-title:before {
+.pflo-grid-item-title:before,
+.projects-slider-item:before {
   content: counter(section, decimal-leading-zero) " /";
   @apply mr-5;
 }
