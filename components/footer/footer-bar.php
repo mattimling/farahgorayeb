@@ -7,7 +7,7 @@ $gallery = get_field( 'gallery', 'options' );
 
 ?>
 
-<div class="bg-peach js-footer-links footer-links [&.is-hovered]:bg-peachDark transition-all duration-700 ease-in-out">
+<div class="bg-peach mt-[90px] js-footer-links footer-links [&.is-hovered]:bg-peachDark transition-all duration-700 ease-in-out">
 
 	<!-- Menus -->
 	<div class="px-5 pt-5 grid grid-cols-12 gap-x-5 gap-y-[60px]">

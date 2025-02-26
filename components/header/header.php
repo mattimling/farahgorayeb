@@ -28,7 +28,7 @@ $preloader = is_localhost() ? 0 : 1;
 	</style> -->
 </head>
 
-<?php $body_classes = 'font-m text-body select-none cursor-default text-black bg-white'; ?>
+<?php $body_classes = 'font-m text-body select-none cursor-crosshair text-black bg-white'; ?>
 
 <body data-barba="js-barba-wrapper" <?php body_class( $body_classes ); ?> style="<?= $preloader ? 'opacity: 0;' : ''; ?>">
 
