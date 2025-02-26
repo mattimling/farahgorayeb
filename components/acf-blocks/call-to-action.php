@@ -7,7 +7,7 @@ $link = get_sub_field( 'link' );
 
 ?>
 
-<div class="w-full md:aspect-video xl:aspect-[1500/600] overflow-hidden relative flex flex-col justify-between px-5 py-[60px] -mb-[60px]">
+<div class="w-full md:aspect-video xl:aspect-[1500/600] overflow-hidden relative flex flex-col justify-between px-5 py-[60px] -mb-[150px] mt-[90px] call-to-action">
 
 	<div class="absolute top-0 left-0 w-full h-full js-element-blurin pointer-events-none">
 		<?= mi_get_image( $image, 'xl', 'w-full h-full object-cover' ); ?>
