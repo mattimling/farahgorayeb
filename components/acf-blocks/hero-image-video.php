@@ -6,7 +6,7 @@ $video_link = get_sub_field( 'video_link' );
 
 ?>
 
-<div class="w-full h-[100dvh] -mt-[calc(71px+60px)] js-hero prevent-children overflow-hidden">
+<div class="w-full max-h-[100dvh] -mt-[calc(71px+60px)] js-hero prevent-children overflow-hidden">
 
 	<div class="js-hero-inner">
 
