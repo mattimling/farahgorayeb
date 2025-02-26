@@ -12,6 +12,7 @@
 @import "partials/components/element-blurin.css";
 @import "partials/components/portfolio-grid.css";
 @import "partials/components/simple-content.css";
+@import "partials/components/projects-slider.css";
 
 /* Config */
 @config './tailwind.config.js';
