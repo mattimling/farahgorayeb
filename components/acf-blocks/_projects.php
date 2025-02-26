@@ -81,7 +81,7 @@ $portfolio_query = new WP_Query( $args );
 
 							<?php if ( has_post_thumbnail() ) : ?>
 								<div class="pflo-grid-item-img overflow-hidden relative">
-									<?= get_the_post_thumbnail( get_the_ID(), 'large', [ 'class' => 'w-full' ] ); ?>
+									<?= get_the_post_thumbnail( get_the_ID(), 'xl', [ 'class' => 'w-full' ] ); ?>
 
 									<!-- <div class="absolute top-0 left-0 z-10 w-[400px] h-[400px] js-pflo-grid-item-img-blur"></div> -->
 								</div>
