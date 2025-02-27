@@ -104,17 +104,25 @@ $gallery = get_field( 'gallery', 'options' );
 	</div>
 
 	<!-- Copyright -->
-	<div class="flex justify-between px-5 pb-5">
+	<div class="flex px-5 pb-5 grid grid-cols-12 gap-x-5">
 
-		<div class="">
+		<div class="col-span-3">
 			<?= $copyright; ?>
 		</div>
 
-		<div class="">
+		<div class="col-span-3">
 			By
-			<a href="http://emelecollab.com/" class="footer-link">
+			<a href="http://emelecollab.com/">
 				Emele Collab
 			</a>
+		</div>
+
+		<div class="col-span-6 text-right">
+			<a href="#" onclick="event.preventDefault(); lenis.scrollTo(0, { duration: 1, easing: (t) => t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2 });">
+				Back to top
+			</a>
+
+			↑
 		</div>
 
 	</div>
