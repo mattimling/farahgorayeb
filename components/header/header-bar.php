@@ -44,7 +44,7 @@ $menu_close_icon = get_field( 'menu_close_icon', 'options' );
 </div>
 
 <!-- Menu -->
-<div class="fixed top-0 left-0 h-full w-full z-10 is-close [&.is-close]:opacity-0 [&.is-close]:pointer-events-none transition-opacity duration-1000 ease-in-out js-menu">
+<div class="fixed top-0 left-0 h-full w-full z-10 is-close [&.is-close]:opacity-0 [&.is-close]:pointer-events-none transition-opacity duration-500 ease-in-out js-menu">
 
 	<!-- Overlay -->
 	<div class="absolute top-0 left-0 w-full h-full bg-white opacity-60"></div>
@@ -70,7 +70,7 @@ $menu_close_icon = get_field( 'menu_close_icon', 'options' );
 					?>
 
 					<div class="flex menu-item">
-						<a href="<?= $url; ?>" class="[&.is-active]:underline <?= is_page() && ( get_permalink() == $link['url'] || is_page_descendant( get_the_ID(), $link['url'] ) ) ? 'is-active' : ''; ?>">
+						<a href="<?= $url; ?>" class="js-menu-link [&.is-active]:underline <?= is_page() && ( get_permalink() == $link['url'] || is_page_descendant( get_the_ID(), $link['url'] ) ) ? 'is-active' : ''; ?>">
 							<?= $title; ?>
 						</a>
 
