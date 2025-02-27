@@ -4,7 +4,7 @@ function menu() {
 
         const self = event.target;
 
-        if (self.classList.contains('js-menu-open') || self.classList.contains('js-menu-close')) {
+        if (self.classList.contains('js-menu-open') || self.classList.contains('js-menu-close') || self.classList.contains('js-menu-link')) {
 
             event.preventDefault();
 
@@ -13,6 +13,7 @@ function menu() {
             const menuClose = document.querySelector('.js-menu-close');
             const contentWrapper = document.querySelector('.js-content-wrapper');
 
+            // Open menu
             if (self.classList.contains('js-menu-open')) {
 
                 menuOpen.classList.add('is-hidden');
@@ -22,12 +23,31 @@ function menu() {
 
             }
 
+            // Close menu
             if (self.classList.contains('js-menu-close')) {
 
                 menuOpen.classList.remove('is-hidden');
                 menuClose.classList.add('is-hidden');
                 menu.classList.add('is-close');
                 contentWrapper.classList.remove('is-blurry');
+
+            }
+
+            // Link clicked = close menu
+            if (self.classList.contains('js-menu-link')) {
+
+                menuOpen.classList.remove('is-hidden');
+                menuClose.classList.add('is-hidden');
+                menu.classList.add('is-close');
+                contentWrapper.classList.remove('is-blurry');
+
+                // Change active link
+                setTimeout(timer => {
+                    document.querySelectorAll('.js-menu-link').forEach(item => {
+                        item.classList.remove('is-active');
+                    });
+                    self.classList.add('is-active');
+                }, 1000);
 
             }
 
