@@ -12,6 +12,7 @@ function menu() {
             const menuOpen = document.querySelector('.js-menu-open');
             const menuClose = document.querySelector('.js-menu-close');
             const contentWrapper = document.querySelector('.js-content-wrapper');
+            const logo = document.querySelector('.js-logo');
 
             // Open menu
             if (self.classList.contains('js-menu-open')) {
@@ -20,6 +21,7 @@ function menu() {
                 menuClose.classList.remove('is-hidden');
                 menu.classList.remove('is-close');
                 contentWrapper.classList.add('is-blurry');
+                logo.classList.add('is-inactive');
 
             }
 
@@ -30,6 +32,7 @@ function menu() {
                 menuClose.classList.add('is-hidden');
                 menu.classList.add('is-close');
                 contentWrapper.classList.remove('is-blurry');
+                logo.classList.remove('is-inactive');
 
             }
 
@@ -40,6 +43,7 @@ function menu() {
                 menuClose.classList.add('is-hidden');
                 menu.classList.add('is-close');
                 contentWrapper.classList.remove('is-blurry');
+                logo.classList.remove('is-inactive');
 
                 // Change active link
                 setTimeout(timer => {
@@ -58,3 +62,24 @@ function menu() {
 }
 
 menu();
+
+function menuActiveItem() {
+    const menuItems = document.querySelectorAll('.js-menu-link');
+    const currentPath = window.location.pathname;
+
+    if (menuItems) {
+        menuItems.forEach(item => {
+            item.classList.remove('is-active');
+
+            const itemPath = new URL(item.href).pathname;
+
+            // Match exact path
+            if (itemPath === currentPath) {
+                item.classList.add('is-active');
+            }
+        });
+    }
+}
+
+
+menuActiveItem();
