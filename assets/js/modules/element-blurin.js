@@ -9,7 +9,7 @@ function elementBlurin() {
         const rect = element.getBoundingClientRect();
         const viewportHeight = window.innerHeight;
         const maxBlur = 15;
-        const blurDistance = viewportHeight / 4; // Distance over which blur fades
+        const blurDistance = viewportHeight / 5; // Distance over which blur fades
         const transformDistance = viewportHeight / 2; // Distance over which element will translate
 
         // Calculate opacity and transform progress
