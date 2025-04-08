@@ -43,7 +43,8 @@ function barbaPageTransition() {
 
                 ifFunctionExist('footerLink');
                 ifFunctionExist('footerTitle');
-                ifFunctionExist('pfloFilter');
+                ifFunctionExist('projectsFilter');
+                ifFunctionExist('parentFilter');
                 ifFunctionExist('projectsSlider');
 
                 transitionTarget.style.transform = '';
@@ -57,6 +58,8 @@ function barbaPageTransition() {
             ifFunctionExist('elementBlurin');
             ifFunctionExist('imageImageHeight');
             ifFunctionExist('prevNextHoverEffect');
+            ifFunctionExist('projectsItemHover');
+            ifFunctionExist('menuActiveItem');
         }, 10);
 
     }
@@ -71,17 +74,22 @@ function barbaPageTransition() {
         timeout: 10000,
         transitions: [{
             async leave(data) {
+
                 const done = this.async();
                 to(data);
                 await delay((transitionDelay));
                 done();
+
             },
 
             async enter(data) {
+
                 ti(data);
+
             },
 
             async once(data) {
+
             },
         },],
         prevent: ({ el }) => el.classList && el.classList.contains('_brb-prv')
