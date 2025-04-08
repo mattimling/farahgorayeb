@@ -7,7 +7,7 @@ body {
 }
 
 body::-webkit-scrollbar {
-  @apply w-1 transition-all duration-300;
+  @apply w-0 transition-all duration-300;
 }
 
 body::-webkit-scrollbar-thumb {
