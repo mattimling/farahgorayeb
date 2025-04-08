@@ -13,6 +13,7 @@
 @import "partials/components/portfolio-grid.css";
 @import "partials/components/simple-content.css";
 @import "partials/components/projects-slider.css";
+@import "partials/components/projects-filter.css";
 
 /* Config */
 @config './tailwind.config.js';

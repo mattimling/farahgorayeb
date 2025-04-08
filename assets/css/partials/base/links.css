@@ -1,5 +1,25 @@
-.footer-links a {
-  @apply border-b-2 border-transparent hover:border-black transition-all duration-300;
+.body-links a {
+  @apply border-b-2 border-transparent hover:border-black transition-all duration-200;
+}
+
+.body-link .body-link-text {
+  @apply border-b-2 border-transparent transition-all duration-200 leading-[1.2];
+}
+
+.body-link:hover .body-link-text {
+  @apply border-black;
+}
+
+.body-link-h1 {
+  @apply border-b-[4px] md:border-b-[6px] border-transparent hover:border-b-black transition-all duration-200;
+}
+
+.body-link-h1-inverted {
+  @apply border-b-[4px] md:border-b-[6px] border-black hover:border-transparent transition-all duration-200;
+}
+
+.body-link-h3 {
+  @apply border-b-[3px] md:border-b-[4px] border-transparent hover:border-b-black transition-all duration-200;
 }
 
 /* .footer-links a[target="_blank"]:after {
