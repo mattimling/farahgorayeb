@@ -13,12 +13,12 @@ $menu_close_icon = get_field( 'menu_close_icon', 'options' );
 
 	<div class="flex justify-between overflow-hidden text-black relative">
 
-		<a href="<?= home_url( '/' ) ?>" class="w-24 flex [&_path]:fill-black p-5" aria-label="<?= esc_attr( get_bloginfo( 'name' ) ); ?>">
+		<a href="<?= home_url( '/' ) ?>" class="w-24 flex [&_path]:fill-black p-5 hover:opacity-60 transition-opacity duration-300 js-logo [&.is-inactive]:pointer-events-none" aria-label="<?= esc_attr( get_bloginfo( 'name' ) ); ?>">
 			<?= $logo; ?>
 		</a>
 
-		<a href="#" class="absolute top-0 right-0 flex items-center h-full [&_path]:fill-black text-black p-5 scale-110 js-menu-open prevent-children [&.is-hidden]:opacity-0 [&.is-hidden]:pointer-events-none transition-all duration-300" aria-label="<?= $menu_open_text; ?>">
-			<span class="mr-[10px]">
+		<a href="#" class="body-link absolute top-0 right-0 flex items-center h-full [&_path]:fill-black text-black p-5 scale-110 js-menu-open prevent-children [&.is-hidden]:opacity-0 [&.is-hidden]:pointer-events-none transition-all duration-300" aria-label="<?= $menu_open_text; ?>">
+			<span class="mr-[10px] body-link-text">
 				<?= $menu_open_text; ?>
 			</span>
 
@@ -27,8 +27,8 @@ $menu_close_icon = get_field( 'menu_close_icon', 'options' );
 			</span>
 		</a>
 
-		<a href="#" class="absolute top-0 right-0 flex items-center h-full [&_path]:fill-black text-black p-5 scale-110 js-menu-close [&.is-hidden]:opacity-0 [&.is-hidden]:pointer-events-none is-hidden prevent-children transition-all duration-300" aria-label="<?= $menu_close_text; ?>">
-			<span class="mr-[10px]">
+		<a href="#" class="body-link absolute top-0 right-0 flex items-center h-full [&_path]:fill-black text-black p-5 scale-110 js-menu-close [&.is-hidden]:opacity-0 [&.is-hidden]:pointer-events-none is-hidden prevent-children transition-all duration-300" aria-label="<?= $menu_close_text; ?>">
+			<span class="mr-[10px] body-link-text">
 				<?= $menu_close_text; ?>
 			</span>
 
@@ -70,7 +70,7 @@ $menu_close_icon = get_field( 'menu_close_icon', 'options' );
 					?>
 
 					<div class="flex menu-item">
-						<a href="<?= $url; ?>" class="js-menu-link [&.is-active]:underline <?= is_page() && ( get_permalink() == $link['url'] || is_page_descendant( get_the_ID(), $link['url'] ) ) ? 'is-active' : ''; ?>">
+						<a href="<?= $url; ?>" class="js-menu-link body-link-h1 [&.is-active]:border-b-black <?= is_page() && ( get_permalink() == $link['url'] || is_page_descendant( get_the_ID(), $link['url'] ) ) ? 'is-active' : ''; ?>">
 							<?= $title; ?>
 						</a>
 
@@ -88,10 +88,10 @@ $menu_close_icon = get_field( 'menu_close_icon', 'options' );
 		<!-- Lang menu -->
 		<div class="text-h1 flex">
 
-			<a href="#" class="underline">
+			<a href="#" class="body-link-h1 [&.is-active]:border-b-black is-active">
 				EN
 			</a>,
-			<a href="#" class="ml-5">
+			<a href="#" class="ml-5 body-link-h1">
 				FR
 			</a>
 

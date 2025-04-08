@@ -7,7 +7,7 @@ $gallery = get_field( 'gallery', 'options' );
 
 ?>
 
-<div class="bg-peach mt-[90px] js-footer-links footer-links [&.is-hovered]:bg-peachDark transition-all duration-700 ease-in-out">
+<div class="bg-peach mt-[90px] js-footer-links body-links [&.is-hovered]:bg-peachDark transition-all duration-700 ease-in-out">
 
 	<!-- Menus -->
 	<div class="px-5 pt-5 grid grid-cols-12 gap-x-5 gap-y-[60px]">
@@ -22,7 +22,7 @@ $gallery = get_field( 'gallery', 'options' );
 				$text = get_sub_field( 'text' );
 				?>
 
-				<div class="col-span-12 md:col-span-6 2xl:col-span-3 grid grid-cols-3 js-element-blurin">
+				<div class="col-span-12 md:col-span-6 2xl:col-span-3 grid grid-cols-3 js-element-blurin gap-x-5">
 
 					<div class="col-span-1">
 						<?= $title; ?>
@@ -104,25 +104,25 @@ $gallery = get_field( 'gallery', 'options' );
 	</div>
 
 	<!-- Copyright -->
-	<div class="flex px-5 pb-5 grid grid-cols-12 gap-x-5">
+	<div class="px-5 pb-5 grid grid-cols-12 gap-x-5">
 
-		<div class="col-span-3">
+		<div class="col-span-6 sm:col-span-4 md:col-span-6 2xl:col-span-3">
 			<?= $copyright; ?>
 		</div>
 
-		<div class="col-span-3">
-			By
-			<a href="http://emelecollab.com/">
-				Emele Collab
-			</a>
-		</div>
-
-		<div class="col-span-6 text-right">
+		<div class="col-span-3 max-sm:hidden">
 			<a href="#" onclick="event.preventDefault(); lenis.scrollTo(0, { duration: 1, easing: (t) => t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2 });">
 				Back to top
 			</a>
 
 			↑
+		</div>
+
+		<div class="col-span-6 sm:col-span-5 md:col-span-3 2xl:col-span-6 text-right">
+			By
+			<a href="http://emelecollab.com/" target="_blank">
+				Emele Collab
+			</a>
 		</div>
 
 	</div>
