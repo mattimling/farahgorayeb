@@ -62,7 +62,7 @@ function barbaPageTransition() {
             ifFunctionExist('projectsItemHover');
             ifFunctionExist('menuActiveItem');
             ifFunctionExist('heroVideoAutoplay');
-            ifFunctionExist('heroLogoMask');
+            ifFunctionExist('heroLogoMask', 1000);
         }, 10);
 
     }

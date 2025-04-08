@@ -57,7 +57,7 @@ function heroParallax() {
 
 heroParallax();
 
-function heroLogoMask() {
+function heroLogoMask(time) {
     const logoMask = document.querySelector('.js-hero-logo-mask');
 
     if (!logoMask) return;
@@ -66,10 +66,10 @@ function heroLogoMask() {
 
         logoMask.classList.add('is-scaled');
 
-    }, 1000);
+    }, time);
 }
 
-heroLogoMask();
+heroLogoMask(5500);
 
 function heroVideoAutoplay() {
 
