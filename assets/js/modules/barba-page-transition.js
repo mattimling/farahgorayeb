@@ -63,6 +63,8 @@ function barbaPageTransition() {
             ifFunctionExist('menuActiveItem');
             ifFunctionExist('heroVideoAutoplay');
             ifFunctionExist('heroLogoMask', 1000);
+            ifFunctionExist('textareaAutoHeight');
+            ifFunctionExist('initContactForm');
         }, 10);
 
     }

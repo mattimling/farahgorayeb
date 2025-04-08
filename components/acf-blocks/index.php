@@ -38,6 +38,12 @@
 		elseif ( get_row_layout() == 'showroom_slider' ) :
 			get_template_part( 'components/acf-blocks/showroom-slider' );
 
+		elseif ( get_row_layout() == 'contact_info' ) :
+			get_template_part( 'components/acf-blocks/contact-info' );
+
+		elseif ( get_row_layout() == 'contact_form' ) :
+			get_template_part( 'components/acf-blocks/contact-form' );
+
 		endif;
 
 		?>

@@ -51,6 +51,8 @@ add_action( 'wp_enqueue_scripts', function () {
 		'prev-next',
 		'projects-slider',
 		'projects-item-hover',
+		'textarea-auto-height',
+		'init-contact-form',
 	];
 
 	// Define External JS files to enqueue

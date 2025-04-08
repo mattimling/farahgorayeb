@@ -1,0 +1,24 @@
+.cf7-shortcode {
+  @apply w-full mb-10;
+}
+
+.cf7-shortcode input,
+.cf7-shortcode textarea {
+  @apply bg-transparent outline-none w-full;
+}
+
+.cf7-shortcode textarea {
+  @apply resize-none;
+}
+
+.cf7-shortcode input[type="submit"] {
+  @apply mt-20 w-auto cursor-pointer body-link-h1;
+}
+
+.cf7-shortcode .wpcf7-not-valid-tip {
+  @apply text-h3 text-peachDark mb-5;
+}
+
+.cf7-shortcode .wpcf7-response-output {
+  @apply !m-0 !p-0 !border-none text-h3 text-peachDark !mt-2 !mb-5;
+}
