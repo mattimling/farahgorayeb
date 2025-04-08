@@ -24,6 +24,33 @@
                     "display": "row",
                     "sub_fields": [
                         {
+                            "key": "field_67f507bbbdf59",
+                            "label": "Media Type",
+                            "name": "media_type",
+                            "aria-label": "",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "Background Image": "Background Image",
+                                "Self Hosted Video": "Self Hosted Video"
+                            },
+                            "default_value": false,
+                            "return_format": "value",
+                            "multiple": 0,
+                            "allow_null": 0,
+                            "allow_in_bindings": 0,
+                            "ui": 0,
+                            "ajax": 0,
+                            "placeholder": ""
+                        },
+                        {
                             "key": "field_67b5949d553c9",
                             "label": "Gallery",
                             "name": "gallery",
@@ -31,7 +58,15 @@
                             "type": "gallery",
                             "instructions": "If there are multiple items, a slider will be displayed.",
                             "required": 0,
-                            "conditional_logic": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_67f507bbbdf59",
+                                        "operator": "==",
+                                        "value": "Background Image"
+                                    }
+                                ]
+                            ],
                             "wrapper": {
                                 "width": "",
                                 "class": "",
@@ -59,7 +94,15 @@
                             "type": "number",
                             "instructions": "",
                             "required": 0,
-                            "conditional_logic": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_67f507bbbdf59",
+                                        "operator": "==",
+                                        "value": "Background Image"
+                                    }
+                                ]
+                            ],
                             "wrapper": {
                                 "width": "",
                                 "class": "",
@@ -75,14 +118,22 @@
                             "append": ""
                         },
                         {
-                            "key": "field_67b594b9553ca",
-                            "label": "Video Link",
-                            "name": "video_link",
+                            "key": "field_67f5083947427",
+                            "label": "Self Hosted Video",
+                            "name": "self_hosted_video",
                             "aria-label": "",
                             "type": "text",
-                            "instructions": "If empty, gallery images will be used instead.",
+                            "instructions": "Upload video to Media and then paste direct video link here.",
                             "required": 0,
-                            "conditional_logic": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_67f507bbbdf59",
+                                        "operator": "==",
+                                        "value": "Self Hosted Video"
+                                    }
+                                ]
+                            ],
                             "wrapper": {
                                 "width": "",
                                 "class": "",
@@ -94,6 +145,35 @@
                             "placeholder": "",
                             "prepend": "",
                             "append": ""
+                        },
+                        {
+                            "key": "field_67f51777b09b0",
+                            "label": "Embed Video",
+                            "name": "embed_video",
+                            "aria-label": "",
+                            "type": "textarea",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_67f507bbbdf59",
+                                        "operator": "==",
+                                        "value": "Embed Video"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "allow_in_bindings": 0,
+                            "rows": "",
+                            "placeholder": "",
+                            "new_lines": ""
                         }
                     ],
                     "min": "",
@@ -822,5 +902,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1740596262
+    "modified": 1744116469
 }

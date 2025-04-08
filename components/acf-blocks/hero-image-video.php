@@ -2,27 +2,20 @@
 
 $gallery = get_sub_field( 'gallery' );
 $gallery_timeout = get_sub_field( 'gallery_timeout' );
-$video_link = get_sub_field( 'video_link' );
+$media_type = get_sub_field( 'media_type' );
+$self_hosted_video = get_sub_field( 'self_hosted_video' );
+$embed_video = get_sub_field( 'embed_video' );
 
 ?>
 
-<div class="w-full max-h-[100dvh] -mt-[calc(71px+60px)] js-hero prevent-children overflow-hidden">
+
+<div class="w-full h-[100dvh] -mt-[calc(71px+60px)] js-hero prevent-children overflow-hidden">
 
 	<div class="js-hero-inner">
 
-		<?php if ( $video_link ) : ?>
+		<?php if ( $media_type == 'Background Image' ) : ?>
 
-			<div class="h-full">
-
-				<video preload="metadata" loop muted autoplay playsinline class="w-full h-full object-cover">
-					<source src="<?= $video_link ?>" type="video/mp4">
-				</video>
-
-			</div>
-
-		<?php else : ?>
-
-			<div class="h-full pointer-events-noneX">
+			<div class="w-full h-full pointer-events-none">
 
 				<?php if ( count( $gallery ) == 1 ) : ?>
 
@@ -30,7 +23,7 @@ $video_link = get_sub_field( 'video_link' );
 
 				<?php else : ?>
 
-					<div class="w-full h-full relative js-hero-gallery" data-gallery-timeout="<?= ! empty( $gallery_timeout ) ? $gallery_timeout : '3'; ?>">
+					<div class="w-full h-[100dvh] relative js-hero-gallery" data-gallery-timeout="<?= ! empty( $gallery_timeout ) ? $gallery_timeout : '3'; ?>">
 
 						<?php foreach ( $gallery as $image ) : ?>
 
@@ -43,6 +36,24 @@ $video_link = get_sub_field( 'video_link' );
 					</div>
 
 				<?php endif; ?>
+
+			</div>
+
+		<?php elseif ( $media_type == 'Self Hosted Video' ) : ?>
+
+			<div class="w-full h-[100dvh] pointer-events-none">
+
+				<video preload="metadata" muted playsinline loop autoplay class="w-full h-full object-cover">
+					<source src="<?= $self_hosted_video; ?>" type="video/mp4">
+				</video>
+
+			</div>
+
+		<?php elseif ( $media_type == 'Embed Video' ) : ?>
+
+			<div class="w-full h-[100dvh] relative pointer-events-none">
+
+				<?= clean_video_embed( $embed_video ); ?>
 
 			</div>
 

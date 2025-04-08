@@ -24,43 +24,35 @@ function heroGallery() {
 
 heroGallery();
 
-
-
-
-
-
-
-
 function heroParallax() {
     const hero = document.querySelector('.js-hero');
     const heroInner = document.querySelector('.js-hero-inner');
 
-    if (!hero || !heroInner) return;
+    if (!hero || !heroInner || typeof lenis === 'undefined') return;
 
-    // Apply smooth easing when the element moves
-    hero.addEventListener('mousemove', (event) => {
-        const { left, top, width, height } = hero.getBoundingClientRect();
-        const mouseX = event.clientX - left;
-        const mouseY = event.clientY - top;
+    const updateParallax = () => {
+        const rect = hero.getBoundingClientRect();
+        const scrollY = window.scrollY || window.pageYOffset;
+        const offsetTop = rect.top + scrollY;
+        const scrollPos = scrollY - offsetTop;
 
-        // Calculate the percentage of the mouse's position within the hero container
-        const percentX = (mouseX / width) - 1; // From -0.5 to 0.5
-        const percentY = (mouseY / height) - 1; // From -0.5 to 0.5
+        // Only apply if in viewport
+        if (
+            scrollY + window.innerHeight > offsetTop &&
+            scrollY < offsetTop + hero.offsetHeight
+        ) {
+            const translateY = scrollPos * 0.2;
+            const scale = 1 + scrollPos * 0.0003;
+            const grayscale = Math.min(scrollPos / 1500, 1);
+            const blur = Math.min(scrollPos / 200, 10); // max 10px blur
 
-        // Apply the transformation to the inner container with enhanced movement strength
-        const movementStrength = 30; // Increased movement strength
-        const movementX = percentX * movementStrength;
-        const movementY = percentY * movementStrength;
+            heroInner.style.transform = `translateY(${translateY}px) scale(${scale})`;
+            heroInner.style.filter = `grayscale(${grayscale}) blur(${blur}px)`;
+        }
+    };
 
-        heroInner.style.transition = 'transform 1s ease-out'; // Smooth easing transition
-        heroInner.style.transform = `translate(${movementX}px, ${movementY}px)`;
-    });
-
-    // Reset the transform when the mouse leaves
-    /* hero.addEventListener('mouseleave', () => {
-        heroInner.style.transition = 'transform 0.3s ease-in-out'; // Smooth reset transition
-        heroInner.style.transform = 'translate(0, 0)';
-    }); */
+    lenis.on('scroll', updateParallax);
+    updateParallax();
 }
 
-// heroParallax();
+heroParallax();
