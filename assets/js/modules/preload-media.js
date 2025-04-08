@@ -35,7 +35,7 @@ function pm() {
             // window.addEventListener('scroll', onScroll);
         }
 
-    }, 6000);
+    }, 5000);
 
 }
 

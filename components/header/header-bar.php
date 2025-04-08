@@ -1,5 +1,6 @@
 <?php
 
+$preloader = $args['preloader'] ?? false;
 $logo = get_field( 'logo', 'options' );
 $menu_open_text = get_field( 'menu_open_text', 'options' );
 $menu_open_icon = get_field( 'menu_open_icon', 'options' );
@@ -9,7 +10,7 @@ $menu_close_icon = get_field( 'menu_close_icon', 'options' );
 ?>
 
 <!-- Header -->
-<div class="fixed top-0 left-0 z-50 w-full translate-y-0">
+<div class="fixed top-0 left-0 z-50 w-full translate-y-0 js-header-bar" style="<?= $preloader ? 'opacity: 0;' : ''; ?>">
 
 	<div class="flex justify-between overflow-hidden text-black relative">
 

@@ -1,12 +1,12 @@
 <?php
 
-$preloader = is_localhost() ? 0 : 0;
+$preloader = is_localhost() ? 1 : 1;
 
 ?>
 
 <!doctype html>
 
-<html <?php language_attributes(); ?>>
+<html <?php language_attributes(); ?> style="background-color: #FFF9F3; <?= $preloader ? 'overflow: hidden; pointer-events: none;' : ''; ?>">
 
 <head>
 	<meta name="author" content="MattImling.com">
@@ -43,20 +43,17 @@ $preloader = is_localhost() ? 0 : 0;
 
 	// Preloader only if preloader = true
 	if ( $preloader ) {
-		get_template_part( 'components/global/preloader' );
+		get_template_part( 'components/global/preloader', null, array( 'preloader' => $preloader ) );
 	}
 
 	// Preload all media
 	get_template_part( 'components/global/preload-media' );
 
-	// Page transition
-	get_template_part( 'components/global/page-transition' );
-
 	?>
 
-	<?php get_template_part( 'components/header/header-bar' ); ?>
+	<?php get_template_part( 'components/header/header-bar', null, array( 'preloader' => $preloader ) ); ?>
 
-	<div class="page-wrapper js-page-wrapper" style="<?= $preloader ? 'display: none;' : ''; ?>">
+	<div class=" page-wrapper js-page-wrapper" style="<?= $preloader ? 'opacity: 0;' : ''; ?>">
 
 		<main data-barba="js-barba-content" data-barba-namespace="<?= $wp_query->queried_object->post_name ?>">
 

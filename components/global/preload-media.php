@@ -1,18 +1,18 @@
 <?php
 
-$visible = false;
+$visible = 0;
 
 ?>
 
 <template class="js-preload-media">
 
-	<div class="fixed <?= ! $visible ? '-top-[9999px] -left-[9999px] -z-[9999px]' : 'bottom-0 left-0 z-[100]'; ?> bg-[red] text-colorWhite p-1 flex flex-col gap-1 flex-wrap w-full h-full opacity-10 pointer-events-none">
+	<div class="fixed <?= $visible ? 'z-[100] opacity-50' : '-z-[999] opacity-0 invisible'; ?> bottom-0 left-0 bg-[red] text-colorWhite p-1 flex flex-col gap-1 flex-wrap w-full h-full pointer-events-none">
 
 		<!-- Preload images -->
 		<?php
 
 		// Define the post types you want to include
-		$post_types = array( 'posts', 'page', 'projects' );
+		$post_types = array( 'posts', 'page', 'portfolio', 'showroom' );
 
 		// Create an array to hold all post IDs
 		$all_post_ids = array();
