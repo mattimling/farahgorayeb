@@ -10,7 +10,8 @@
   @apply border-black;
 }
 
-.body-link-h1 {
+.body-link-h1,
+.body-links-h1 a {
   @apply border-b-[4px] md:border-b-[6px] border-transparent hover:border-b-black transition-all duration-200;
 }
 
