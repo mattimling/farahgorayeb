@@ -56,3 +56,31 @@ function heroParallax() {
 }
 
 heroParallax();
+
+function heroLogoMask() {
+    const logoMask = document.querySelector('.js-hero-logo-mask');
+
+    if (!logoMask) return;
+
+    setTimeout(() => {
+
+        logoMask.classList.add('is-scaled');
+
+    }, 1000);
+}
+
+heroLogoMask();
+
+function heroVideoAutoplay() {
+
+    const heroVideo = document.querySelector('.js-hero-video');
+
+    if (heroVideo) {
+
+        heroVideo.play();
+
+    }
+
+}
+
+heroVideoAutoplay();

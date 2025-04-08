@@ -5,13 +5,27 @@ $gallery_timeout = get_sub_field( 'gallery_timeout' );
 $media_type = get_sub_field( 'media_type' );
 $self_hosted_video = get_sub_field( 'self_hosted_video' );
 $embed_video = get_sub_field( 'embed_video' );
+$logo_mask = get_sub_field( 'logo_mask' );
 
 ?>
 
 
 <div class="w-full h-[100dvh] -mt-[calc(71px+60px)] js-hero prevent-children overflow-hidden">
 
-	<div class="js-hero-inner">
+	<div class="js-hero-inner relative">
+
+		<!-- Logo mask -->
+		<div class="absolute bottom-0 left-0 w-full min-h-full flex flex-col justify-end items-end js-hero-logo-mask [&.is-scaled]:scale-[10] [&.is-scaled]:opacity-0 transition-all duration-[1.5s] ease-in-out max-lg:origin-bottom">
+
+			<div class="w-full flex-1 bg-white relative">
+				<div class="absolute top-3 left-0 w-full h-full bg-white"></div>
+			</div>
+
+			<div class="w-full">
+				<?= $logo_mask; ?>
+			</div>
+
+		</div>
 
 		<?php if ( $media_type == 'Background Image' ) : ?>
 
@@ -43,7 +57,7 @@ $embed_video = get_sub_field( 'embed_video' );
 
 			<div class="w-full h-[100dvh] pointer-events-none">
 
-				<video preload="metadata" muted playsinline loop autoplay class="w-full h-full object-cover">
+				<video preload="metadata" muted playsinline loop autoplay class="w-full h-full object-cover js-hero-video">
 					<source src="<?= $self_hosted_video; ?>" type="video/mp4">
 				</video>
 

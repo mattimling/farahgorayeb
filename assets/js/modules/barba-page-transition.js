@@ -46,6 +46,7 @@ function barbaPageTransition() {
                 ifFunctionExist('projectsFilter');
                 ifFunctionExist('parentFilter');
                 ifFunctionExist('projectsSlider');
+                ifFunctionExist('heroParallax');
 
                 transitionTarget.style.transform = '';
 
@@ -60,6 +61,8 @@ function barbaPageTransition() {
             ifFunctionExist('prevNextHoverEffect');
             ifFunctionExist('projectsItemHover');
             ifFunctionExist('menuActiveItem');
+            ifFunctionExist('heroVideoAutoplay');
+            ifFunctionExist('heroLogoMask');
         }, 10);
 
     }
