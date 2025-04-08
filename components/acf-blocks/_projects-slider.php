@@ -27,7 +27,7 @@ $link = get_sub_field( 'link' );
 						setup_postdata( $post );
 						?>
 
-						<div class="flex flex-col gap-y-[10px]">
+						<div class="flex flex-col gap-y-[10px] body-links">
 
 							<div class="overflow-hidden <?= $slider_type == 'projects' ? '' : ''; ?>">
 
@@ -39,7 +39,7 @@ $link = get_sub_field( 'link' );
 
 							</div>
 
-							<a href="<?= get_the_permalink(); ?>" class="projects-slider-item">
+							<a href="<?= get_the_permalink(); ?>" class="projects-slider-item self-start">
 								<?= get_the_title(); ?>
 							</a>
 
@@ -59,7 +59,7 @@ $link = get_sub_field( 'link' );
 
 			<div class="px-5 pt-[60px] pb-[90px] js-element-blurin">
 
-				<?= mi_get_link( $link, 'text-h2 underline' ); ?>
+				<?= mi_get_link( $link, 'text-h2 body-link-h1-inverted' ); ?>
 
 			</div>
 

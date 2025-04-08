@@ -8,9 +8,9 @@ $show_filter = get_sub_field( 'show_filter' );
 
 // Define the custom query arguments
 $args = array(
-	'post_type' => $post_type, // Custom post type 'portfolio'
-	'posts_per_page' => -1,          // Get all posts
-	'post_status' => 'publish',   // Only get published posts
+	'post_type' => $post_type,
+	'posts_per_page' => -1,
+	'post_status' => 'publish',
 );
 
 // Create a new WP_Query instance
@@ -19,13 +19,12 @@ $portfolio_query = new WP_Query( $args );
 ?>
 
 <!-- Filter -->
-
 <?php if ( $show_filter ) : ?>
 
 	<div class="px-5 text-h1 flex flex-wrap [&_.item:last-child_.comma]:hidden js-pflo-filter">
 
 		<div class="flex item">
-			<a href="#all" class="js-pflo-filter-item hover:underline">
+			<a href="#all" class="js-pflo-filter-item body-link-h1 [&.is-active]:border-b-black is-active js-parent-filter">
 				All
 			</a>
 			<span class="mr-5">,</span>
@@ -33,31 +32,102 @@ $portfolio_query = new WP_Query( $args );
 
 		<?php
 
-		$categories = get_terms( [ 
-			'taxonomy' => $post_type . '_category',
+		$taxonomy = $post_type . '_category';
+		$terms = get_terms( [ 
+			'taxonomy' => $taxonomy,
 			'hide_empty' => true,
 		] );
 
+		if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) :
+
+			if ( $post_type === 'showroom' ) :
+
+				// Organize terms into parents and children
+				$parent_terms = [];
+				$child_terms_by_parent = [];
+
+				foreach ( $terms as $term ) {
+					if ( $term->parent == 0 ) {
+						$parent_terms[ $term->term_id ] = $term;
+					} else {
+						$child_terms_by_parent[ $term->parent ][] = $term;
+					}
+				}
+
+				?>
+
+				<?php foreach ( $parent_terms as $parent ) :
+					if ( ! isset( $child_terms_by_parent[ $parent->term_id ] ) )
+						continue; // skip if no children
+					?>
+
+					<div class="item flex">
+						<a href="#<?= $parent->slug; ?>" class="body-link-h1 js-parent-filter [&.is-active]:border-b-black">
+							<?= esc_html( $parent->name ); ?>
+						</a>
+						<span class="mr-5 comma">,</span>
+					</div>
+
+				<?php endforeach; ?>
+
+			<?php else :
+				// Default output for other post types (flat list)
+				foreach ( $terms as $term ) : ?>
+					<div class="flex flex-wrap item">
+						<a href="#<?= esc_html( $term->slug ); ?>" class="body-link-h1 js-pflo-filter-item [&.is-active]:border-b-black">
+							<?= esc_html( $term->name ); ?>
+						</a>
+						<span class="mr-5 comma">,</span>
+					</div>
+				<?php endforeach;
+			endif;
+
+		endif;
 		?>
-
-		<?php if ( ! empty( $categories ) && ! is_wp_error( $categories ) ) : ?>
-
-			<?php foreach ( $categories as $category ) : ?>
-
-				<div class="flex item">
-					<a href="#<?= esc_html( $category->slug ); ?>" class="hover:underline js-pflo-filter-item">
-						<?= esc_html( $category->name ); ?>
-					</a>
-					<span class="mr-5 comma">,</span>
-				</div>
-
-			<?php endforeach; ?>
-
-		<?php endif; ?>
 
 	</div>
 
+	<?php if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) :
+
+		if ( $post_type === 'showroom' ) : ?>
+
+			<div class="px-5 text-h3 relative js-parent-filter-wrapper transition-all duration-300">
+				<?php foreach ( $parent_terms as $parent ) :
+					if ( ! isset( $child_terms_by_parent[ $parent->term_id ] ) )
+						continue; // skip if no children
+					?>
+
+					<div class="absolute pointer-events-none opacity-0 js-parent-filter-content [&.is-active]:opacity-100 [&.is-active]:pointer-events-auto transition-opacity duration-300" data-parent="#<?= $parent->slug; ?>">
+
+						<div class="flex flex-wrap gap-y-2 [&_.item:last-child_.comma]:hidden js-parent-filter-content-inner">
+
+							<?php foreach ( $child_terms_by_parent[ $parent->term_id ] as $child ) : ?>
+
+								<div class="flex item">
+
+									<a href="#<?= esc_attr( $child->slug ); ?>" class="body-link-h3 js-pflo-filter-item [&.is-active]:border-b-black">
+										<?= esc_html( $child->name ); ?>
+									</a>
+
+									<span class="mr-2 md:mr-3 comma">,</span>
+
+								</div>
+
+							<?php endforeach; ?>
+
+						</div>
+
+					</div>
+
+				<?php endforeach; ?>
+			</div>
+
+		<?php endif; ?>
+
+	<?php endif; ?>
+
 <?php endif; ?>
+
 
 <!-- Grid -->
 <div class="px-5">
@@ -66,40 +136,34 @@ $portfolio_query = new WP_Query( $args );
 
 		<div class="grid grid-cols-12 gap-x-5 gap-y-[60px] items-end js-pflo-grid">
 
-			<?php for ( $i = 0; $i < 3; $i++ ) : ?>
+			<?php while ( $portfolio_query->have_posts() ) :
+				$portfolio_query->the_post();
 
-				<?php while ( $portfolio_query->have_posts() ) :
-					$portfolio_query->the_post();
+				$categories = get_the_terms( get_the_ID(), $post_type . '_category' ); // Change 'category' if using a custom taxonomy
+				$category_slugs = ! empty( $categories ) && ! is_wp_error( $categories ) ? implode( ' ', wp_list_pluck( $categories, 'slug' ) ) : '';
+				?>
 
-					$categories = get_the_terms( get_the_ID(), $post_type . '_category' ); // Change 'category' if using a custom taxonomy
-					$category_slug = ! empty( $categories ) && ! is_wp_error( $categories ) ? esc_attr( $categories[0]->slug ) : '';
-					?>
+				<div class="pflo-grid-item <?= $post_type == 'portfolio' ? 'pflo col-span-12 sm:col-span-6 lg:col-span-4 2xl:col-span-3' : 'swrm col-span-6 sm:col-span-4 lg:col-span-3 2xl:col-span-2'; ?> flex flex-col js-element-blurin" data-category="<?= esc_attr( $category_slugs ); ?>">
 
-					<a href="<?php the_permalink(); ?>" class="pflo-grid-item <?= $post_type == 'portfolio' ? 'pflo col-span-12 sm:col-span-6 lg:col-span-4 2xl:col-span-3' : 'swrm col-span-6 sm:col-span-4 lg:col-span-3 2xl:col-span-2'; ?> flex flex-col js-element-blurin" data-category="#<?= $category_slug; ?>">
+					<a href="<?php the_permalink(); ?>" class="pflo-grid-item-inner flex flex-col gap-y-[10px] group js-pflo-item [&.is-inactive]:grayscale [&.is-inactive]:brightness-[.85] transition-all duration-700 ease-in-out will-change-transform">
 
-						<div class="pflo-grid-item-inner flex flex-col gap-y-[10px]">
-
-							<?php if ( has_post_thumbnail() ) : ?>
-								<div class="pflo-grid-item-img overflow-hidden relative">
-									<?= get_the_post_thumbnail( get_the_ID(), 'xl', [ 'class' => 'w-full' ] ); ?>
-
-									<!-- <div class="absolute top-0 left-0 z-10 w-[400px] h-[400px] js-pflo-grid-item-img-blur"></div> -->
-								</div>
-							<?php endif; ?>
-
-							<div class="pflo-grid-item-title flex flex-wrap">
-								<?= get_the_title(); ?>
+						<?php if ( has_post_thumbnail() ) : ?>
+							<div class="pflo-grid-item-img overflow-hidden relative">
+								<?= get_the_post_thumbnail( get_the_ID(), 'xl', [ 'class' => 'w-full group-hover:inverse' ] ); ?>
 							</div>
+						<?php endif; ?>
 
+						<div class="pflo-grid-item-title flex flex-wrap self-start border-b-2 border-transparent group-hover:border-black transition-all duration-200">
+							<?= get_the_title(); ?>
 						</div>
 
 					</a>
 
-				<?php endwhile; ?>
+				</div>
 
-				<?php wp_reset_postdata(); ?>
+			<?php endwhile; ?>
 
-			<?php endfor; ?>
+			<?php wp_reset_postdata(); ?>
 
 		</div>
 
