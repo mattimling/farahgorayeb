@@ -43,14 +43,14 @@ add_action( 'wp_enqueue_scripts', function () {
 		'if-function-exist',
 		'hero-gallery',
 		'menu',
-		'element-pushedback',
 		'element-blurin',
 		'footer-link',
 		'footer-title',
-		'portfolio',
+		'projects-filter',
 		'image-image',
 		'prev-next',
 		'projects-slider',
+		'projects-item-hover',
 	];
 
 	// Define External JS files to enqueue
