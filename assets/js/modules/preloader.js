@@ -46,7 +46,7 @@ function preloader() {
                                     easing: prelTransitionEasing,
                                     duration: prelTransitionDelay,
                                     complete: function () {
-                                        lenis.start();
+                                        // lenis.start();
                                     }
                                 });
 

@@ -1,4 +1,9 @@
 function elementBlurin() {
+    // Only run if the screen width is greater than 768px (desktop)
+    if (window.innerWidth <= 1024) {
+        return;
+    }
+
     const elements = document.querySelectorAll('.js-element-blurin, .js-element-blurin-scale');
     const childrenElements = document.querySelectorAll('.js-element-blurin-children > *');
 

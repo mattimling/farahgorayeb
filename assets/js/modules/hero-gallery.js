@@ -66,6 +66,8 @@ function heroLogoMask(time) {
 
         logoMask.classList.add('is-scaled');
 
+        lenis.start();
+
     }, time);
 }
 

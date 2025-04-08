@@ -14,7 +14,7 @@ $menu_close_icon = get_field( 'menu_close_icon', 'options' );
 
 	<div class="flex justify-between overflow-hidden text-black relative">
 
-		<a href="<?= home_url( '/' ) ?>" class="w-24 flex [&_path]:fill-black p-5 hover:opacity-60 transition-opacity duration-300 js-logo [&.is-inactive]:pointer-events-none" aria-label="<?= esc_attr( get_bloginfo( 'name' ) ); ?>">
+		<a href="<?= home_url( '/' ) ?>" class="w-24 flex [&_path]:fill-black p-5 md:hover:opacity-60 transition-opacity duration-300 js-logo [&.is-inactive]:pointer-events-none" aria-label="<?= esc_attr( get_bloginfo( 'name' ) ); ?>">
 			<?= $logo; ?>
 		</a>
 

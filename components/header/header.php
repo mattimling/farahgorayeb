@@ -1,6 +1,6 @@
 <?php
 
-$preloader = is_localhost() ? 0 : 1;
+$preloader = is_localhost() ? 1 : 1;
 
 ?>
 

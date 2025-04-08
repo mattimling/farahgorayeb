@@ -11,9 +11,9 @@ $gallery = get_field( 'preloader_gallery', 'options' );
 
 	<?php if ( $gallery ) : ?>
 
-		<div class="absolute top-0 left-0 w-full h-full flex gap-x-10 justify-center items-center">
+		<div class="absolute top-0 left-0 w-full h-full flex max-md:flex-col gap-10 justify-center items-center">
 
-			<div class="">
+			<div class="text-center">
 				<?= $title; ?>
 			</div>
 
@@ -27,7 +27,7 @@ $gallery = get_field( 'preloader_gallery', 'options' );
 
 			</div>
 
-			<div class="">
+			<div class="text-center">
 				<?= $tagline; ?>
 			</div>
 
