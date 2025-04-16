@@ -2,6 +2,10 @@
   @apply border-b-2 border-transparent hover:border-black transition-all duration-200;
 }
 
+.body-links-inverted a {
+  @apply border-b-2 border-black hover:border-transparent transition-all duration-200;
+}
+
 .body-link .body-link-text {
   @apply border-b-2 border-transparent transition-all duration-200 leading-[1.2];
 }
