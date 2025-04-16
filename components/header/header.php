@@ -1,6 +1,6 @@
 <?php
 
-$preloader = is_localhost() ? 1 : 1;
+$preloader = is_localhost() ? 0 : 1;
 
 ?>
 
@@ -28,9 +28,9 @@ $preloader = is_localhost() ? 1 : 1;
 	</style> -->
 </head>
 
-<?php $body_classes = 'font-m text-body select-none cursor-crosshair text-black bg-white'; ?>
+<?php $body_classes = 'font-m text-body cursor-crosshair text-black bg-white'; ?>
 
-<body data-barba="js-barba-wrapper" <?php body_class( $body_classes ); ?> style="<?= $preloader ? 'opacity: 0;' : ''; ?>">
+<body data-barba="js-barba-wrapper" <?php body_class( $body_classes ); ?> style="<?= $preloader ? 'opacity: 0; user-select: none;' : ''; ?>">
 
 	<?php
 
