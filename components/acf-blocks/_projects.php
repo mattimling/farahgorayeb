@@ -5,6 +5,7 @@ $args = isset( $args ) ? $args : array();
 $post_type = $args['post_type'];
 
 $show_filter = get_sub_field( 'show_filter' );
+$category_limit = get_sub_field( 'category_limit' ) ?: 2;
 
 // Define the custom query arguments
 $args = array(
@@ -134,16 +135,53 @@ $portfolio_query = new WP_Query( $args );
 
 	<?php if ( $portfolio_query->have_posts() ) : ?>
 
-		<div class="grid grid-cols-12 gap-x-5 gap-y-[60px] items-end js-pflo-grid">
+		<!--  -->
+		<?php
+		$category_post_counts = [];
+		$max_posts_per_category = $category_limit; // Change this number to show more per category
+		$deferred_posts = [];
+		?>
+
+		<div class="grid grid-cols-12 gap-x-5 gap-y-[60px] items-end js-pflo-grid [&.is-all_.is-hidden]:hidden is-all">
 
 			<?php while ( $portfolio_query->have_posts() ) :
 				$portfolio_query->the_post();
 
-				$categories = get_the_terms( get_the_ID(), $post_type . '_category' ); // Change 'category' if using a custom taxonomy
+				$categories = get_the_terms( get_the_ID(), $post_type . '_category' );
 				$category_slugs = ! empty( $categories ) && ! is_wp_error( $categories ) ? implode( ' ', wp_list_pluck( $categories, 'slug' ) ) : '';
+
+				$is_deferred = false;
+				$should_show = true;
+
+				if ( $post_type === 'showroom' && ! empty( $categories ) && ! is_wp_error( $categories ) ) {
+					$should_show = false;
+
+					foreach ( $categories as $cat ) {
+						$cat_id = $cat->term_id;
+
+						if ( empty( $category_post_counts[ $cat_id ] ) ) {
+							$category_post_counts[ $cat_id ] = 0;
+						}
+
+						if ( $category_post_counts[ $cat_id ] < $max_posts_per_category ) {
+							$category_post_counts[ $cat_id ]++;
+							$should_show = true;
+							break;
+						}
+					}
+
+					if ( ! $should_show ) {
+						foreach ( $categories as $cat ) {
+							$category_post_counts[ $cat->term_id ]++;
+						}
+						$is_deferred = true;
+					}
+				}
+
+				ob_start();
 				?>
 
-				<div class="pflo-grid-item <?= $post_type == 'portfolio' ? 'pflo col-span-12 sm:col-span-6 lg:col-span-4 2xl:col-span-3' : 'swrm col-span-6 sm:col-span-4 lg:col-span-3 2xl:col-span-2'; ?> flex flex-col js-element-blurin" data-category="<?= esc_attr( $category_slugs ); ?>">
+				<div class="pflo-grid-item <?= $post_type == 'portfolio' ? 'pflo col-span-12 sm:col-span-6 lg:col-span-4 2xl:col-span-3' : 'swrm col-span-6 sm:col-span-4 lg:col-span-3 2xl:col-span-2'; ?> flex flex-col js-element-blurin <?= $is_deferred ? 'is-hidden' : ''; ?>" data-category="<?= esc_attr( $category_slugs ); ?>">
 
 					<a href="<?php the_permalink(); ?>" class="pflo-grid-item-inner flex flex-col gap-y-[10px] group js-pflo-item [&.is-inactive]:grayscale [&.is-inactive]:brightness-[.85] transition-all duration-700 ease-in-out will-change-transform">
 
@@ -161,11 +199,26 @@ $portfolio_query = new WP_Query( $args );
 
 				</div>
 
-			<?php endwhile; ?>
+				<?php
+				$post_html = ob_get_clean();
 
-			<?php wp_reset_postdata(); ?>
+				if ( $is_deferred ) {
+					$deferred_posts[] = $post_html;
+				} else {
+					echo $post_html;
+				}
+
+			endwhile;
+			wp_reset_postdata();
+			?>
+
+			<?php foreach ( $deferred_posts as $html ) {
+				echo $html;
+			} ?>
 
 		</div>
+
+		<!--  -->
 
 	<?php else : ?>
 

@@ -2,6 +2,7 @@ function projectsFilter() {
     const filter = document.querySelectorAll('.js-pflo-filter');
     const grid = document.querySelector('.js-pflo-grid'); // The grid container
     const allItems = Array.from(document.querySelectorAll('.pflo-grid-item')); // Store all items
+    const duration = 400;
 
     if (!filter || !grid || allItems.length === 0) return;
 
@@ -53,7 +54,9 @@ function projectsFilter() {
                 // Call elementBlurin after the grid is updated
                 elementBlurin();
 
-            }, 400); // Fade-out duration (should match CSS)
+                grid.classList.remove('is-all');
+
+            }, duration); // Fade-out duration (should match CSS)
         }
     });
 }
@@ -69,6 +72,8 @@ function parentFilter() {
         document.addEventListener('click', event => {
 
             const self = event.target;
+            const grid = document.querySelector('.js-pflo-grid'); // The grid container
+            const duration = 400;
 
             if (self.classList.contains('js-parent-filter')) {
 
@@ -109,6 +114,10 @@ function parentFilter() {
                             clicked.closest('.js-parent-filter-wrapper').style.height = child.scrollHeight + 'px';
                         }
                     }
+                } else {
+                    setTimeout(timer => {
+                        grid.classList.add('is-all');
+                    }, duration);
                 }
 
             }

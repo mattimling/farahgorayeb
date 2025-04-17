@@ -563,9 +563,9 @@
                             "message": "",
                             "default_value": 0,
                             "allow_in_bindings": 0,
-                            "ui": 0,
                             "ui_on_text": "",
-                            "ui_off_text": ""
+                            "ui_off_text": "",
+                            "ui": 1
                         }
                     ],
                     "min": "",
@@ -648,9 +648,32 @@
                             "message": "",
                             "default_value": 0,
                             "allow_in_bindings": 0,
-                            "ui": 0,
                             "ui_on_text": "",
-                            "ui_off_text": ""
+                            "ui_off_text": "",
+                            "ui": 1
+                        },
+                        {
+                            "key": "field_6800bec975989",
+                            "label": "Category Limit",
+                            "name": "category_limit",
+                            "aria-label": "",
+                            "type": "number",
+                            "instructions": "Maximum number of items displayed per category when 'All' products are shown.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": 2,
+                            "min": "",
+                            "max": "",
+                            "allow_in_bindings": 0,
+                            "placeholder": "",
+                            "step": "",
+                            "prepend": "",
+                            "append": ""
                         }
                     ],
                     "min": "",
@@ -1042,5 +1065,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1744804718
+    "modified": 1744879465
 }
