@@ -9,8 +9,10 @@ $link = get_sub_field( 'link' );
 
 <div class="w-full md:aspect-video xl:aspect-[1500/600] overflow-hidden relative flex flex-col justify-between px-5 py-[60px] -mb-[150px] mt-[90px] call-to-action group">
 
-	<div class="absolute top-0 left-0 w-full h-full js-element-blurin pointer-events-none overflow-hidden">
-		<?= mi_get_image( $image, 'xl', 'w-full h-full object-cover blur-[5px] scale-[1.1]' ); ?>
+	<div class="absolute top-0 left-0 w-full h-full js-element-blurin pointer-events-none overflow-hidden ">
+		<?= mi_get_image( $image, 'xl', 'w-full h-full object-cover scale-[1.1]' ); ?>
+
+		<div class="absolute top-0 left-0 w-full h-full backdrop-blur-sm"></div>
 	</div>
 
 	<div class="absolute top-0 left-0 z-10 w-full h-full bg-white opacity-30"></div>
