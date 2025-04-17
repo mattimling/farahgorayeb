@@ -4,7 +4,10 @@ function elementBlurin() {
         return;
     }
 
-    const elements = document.querySelectorAll('.js-element-blurin, .js-element-blurin-scale');
+    // Detect if the browser is Safari (excluding Chrome and Android)
+    const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+
+    const elements = document.querySelectorAll('.js-element-blurin');
     const childrenElements = document.querySelectorAll('.js-element-blurin-children > *');
 
     if (!elements.length && !childrenElements.length) return;
@@ -30,9 +33,15 @@ function elementBlurin() {
         const translateAmount = 30 * (1 - transformProgress); // Moves from translateY(30px) to translateY(0)
 
         // Apply styles to the element
-        element.style.filter = `blur(${blurAmount}px)`;
         element.style.opacity = opacityAmount;
-        element.style.transform = `translateY(${translateAmount}px)`;
+
+        // Apply blur only if not Safari
+        if (!isSafari) {
+            element.style.filter = `blur(${blurAmount}px)`;
+            element.style.transform = `translateY(${translateAmount}px)`;
+        } else {
+            // element.style.filter = 'none'; // Remove blur on Safari
+        }
     }
 
     // Scroll event handler
