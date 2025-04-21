@@ -21,6 +21,27 @@
             "selected": 0
         },
         {
+            "key": "field_6806072eaba93",
+            "label": "Show Preloader",
+            "name": "show_preloader",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "Show Preloader for logged users.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "allow_in_bindings": 0,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
+        },
+        {
             "key": "field_67f5273d744ea",
             "label": "Title",
             "name": "title",
@@ -537,5 +558,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1744119690
+    "modified": 1745225554
 }

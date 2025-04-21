@@ -1,6 +1,10 @@
 <?php
 
-$preloader = is_localhost() ? 0 : 1;
+$show_preloader = get_field( 'show_preloader', 'options' );
+
+// Always show preloader for not-logged-in users.
+// For logged-in users, only show if option is enabled.
+$preloader = ( ! is_user_logged_in() || $show_preloader ) ? 1 : 0;
 
 ?>
 
