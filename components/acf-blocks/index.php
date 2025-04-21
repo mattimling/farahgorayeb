@@ -20,6 +20,9 @@
 		elseif ( get_row_layout() == 'image_full_screen' ) :
 			get_template_part( 'components/acf-blocks/image-full-screen' );
 
+		elseif ( get_row_layout() == 'video_full_screen' ) :
+			get_template_part( 'components/acf-blocks/video-full-screen' );
+
 		elseif ( get_row_layout() == 'image_image' ) :
 			get_template_part( 'components/acf-blocks/image-image' );
 

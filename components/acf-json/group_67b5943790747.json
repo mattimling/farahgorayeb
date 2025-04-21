@@ -442,6 +442,27 @@
                             "preview_size": "medium"
                         },
                         {
+                            "key": "field_68063ed7baf83",
+                            "label": "Video Big",
+                            "name": "video_big",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "If video link added, it will replace the image.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "allow_in_bindings": 0,
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": ""
+                        },
+                        {
                             "key": "field_67b88fff328e4",
                             "label": "Image Big Description",
                             "name": "image_big_description",
@@ -487,6 +508,27 @@
                             "mime_types": "",
                             "allow_in_bindings": 0,
                             "preview_size": "medium"
+                        },
+                        {
+                            "key": "field_68063ef5baf84",
+                            "label": "Video Small",
+                            "name": "video_small",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "If video link added, it will replace the image.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "allow_in_bindings": 0,
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": ""
                         },
                         {
                             "key": "field_67b89014328e5",
@@ -535,6 +577,37 @@
                             "ui": 0,
                             "ajax": 0,
                             "placeholder": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_6806399b31e6b": {
+                    "key": "layout_6806399b31e6b",
+                    "name": "video_full_screen",
+                    "label": "Video Full-Screen",
+                    "display": "row",
+                    "sub_fields": [
+                        {
+                            "key": "field_680639a131e6d",
+                            "label": "Video Link",
+                            "name": "video_link",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "Upload a video file to the Media Library, copy it's \"File URL\" and paste it here.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "allow_in_bindings": 0,
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": ""
                         }
                     ],
                     "min": "",
@@ -1065,5 +1138,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1744879465
+    "modified": 1745239822
 }
