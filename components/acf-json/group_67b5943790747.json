@@ -389,7 +389,7 @@
                             "label": "Description",
                             "name": "description",
                             "aria-label": "",
-                            "type": "wysiwyg",
+                            "type": "textarea",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -399,11 +399,11 @@
                                 "id": ""
                             },
                             "default_value": "",
+                            "maxlength": "",
                             "allow_in_bindings": 1,
-                            "tabs": "visual",
-                            "toolbar": "full",
-                            "media_upload": 0,
-                            "delay": 0
+                            "rows": 1,
+                            "placeholder": "",
+                            "new_lines": ""
                         }
                     ],
                     "min": "",
@@ -467,7 +467,7 @@
                             "label": "Image Big Description",
                             "name": "image_big_description",
                             "aria-label": "",
-                            "type": "wysiwyg",
+                            "type": "textarea",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -477,11 +477,11 @@
                                 "id": ""
                             },
                             "default_value": "",
+                            "maxlength": "",
                             "allow_in_bindings": 1,
-                            "tabs": "visual",
-                            "toolbar": "full",
-                            "media_upload": 0,
-                            "delay": 0
+                            "rows": 1,
+                            "placeholder": "",
+                            "new_lines": ""
                         },
                         {
                             "key": "field_67b704dddfd46",
@@ -535,7 +535,7 @@
                             "label": "Image Small Description",
                             "name": "image_small_description",
                             "aria-label": "",
-                            "type": "wysiwyg",
+                            "type": "textarea",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -545,11 +545,11 @@
                                 "id": ""
                             },
                             "default_value": "",
+                            "maxlength": "",
                             "allow_in_bindings": 1,
-                            "tabs": "visual",
-                            "toolbar": "full",
-                            "media_upload": 0,
-                            "delay": 0
+                            "rows": 1,
+                            "placeholder": "",
+                            "new_lines": ""
                         },
                         {
                             "key": "field_67b704e9dfd47",
@@ -608,6 +608,27 @@
                             "placeholder": "",
                             "prepend": "",
                             "append": ""
+                        },
+                        {
+                            "key": "field_68076b5ab0e95",
+                            "label": "Description",
+                            "name": "description",
+                            "aria-label": "",
+                            "type": "textarea",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "allow_in_bindings": 1,
+                            "rows": 1,
+                            "placeholder": "",
+                            "new_lines": ""
                         }
                     ],
                     "min": "",
@@ -1101,7 +1122,7 @@
             },
             "min": "",
             "max": "",
-            "button_label": "Add Row"
+            "button_label": "Add Block"
         }
     ],
     "location": [
@@ -1138,5 +1159,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1745239822
+    "modified": 1745317490
 }

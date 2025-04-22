@@ -1,12 +1,13 @@
 <?php
 
 $video_link = get_sub_field( 'video_link' );
+$description = get_sub_field( 'description' );
 
 ?>
 
 <?php if ( $video_link ) : ?>
 
-	<div class="px-5 w-full">
+	<div class="px-5 w-full flex flex-col gap-y-[10px]">
 
 		<div class="overflow-hidden js-element-blurin">
 
@@ -15,6 +16,14 @@ $video_link = get_sub_field( 'video_link' );
 			</video>
 
 		</div>
+
+		<?php if ( $description ) : ?>
+
+			<div class="text-black [&_strong:first-child]:mr-5 [&_strong:first-child]:font-normal js-element-blurin">
+				<?= $description; ?>
+			</div>
+
+		<?php endif; ?>
 
 	</div>
 
