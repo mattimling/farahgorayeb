@@ -51,8 +51,8 @@ $preloader = ( ! is_user_logged_in() || $show_preloader ) ? 1 : 0;
 	}
 
 	// Preload all media
-	get_template_part( 'components/global/preload-media' );
-
+	// get_template_part( 'components/global/preload-media' );
+	
 	?>
 
 	<?php get_template_part( 'components/header/header-bar', null, array( 'preloader' => $preloader ) ); ?>
