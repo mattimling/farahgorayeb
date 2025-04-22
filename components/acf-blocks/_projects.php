@@ -14,6 +14,10 @@ $args = array(
 	'post_status' => 'publish',
 );
 
+if ( $post_type === 'showroom' ) {
+	$args['orderby'] = 'rand';
+}
+
 // Create a new WP_Query instance
 $portfolio_query = new WP_Query( $args );
 
@@ -135,11 +139,17 @@ $portfolio_query = new WP_Query( $args );
 
 	<?php if ( $portfolio_query->have_posts() ) : ?>
 
-		<!--  -->
 		<?php
+
 		$category_post_counts = [];
 		$max_posts_per_category = $category_limit; // Change this number to show more per category
 		$deferred_posts = [];
+
+		// 🔀 Shuffle posts to mix categories
+		$posts = $portfolio_query->posts;
+		shuffle( $posts );
+		$portfolio_query->posts = $posts;
+
 		?>
 
 		<div class="grid grid-cols-12 gap-x-5 gap-y-[60px] items-end js-pflo-grid [&.is-all_.is-hidden]:hidden is-all">
@@ -217,8 +227,6 @@ $portfolio_query = new WP_Query( $args );
 			} ?>
 
 		</div>
-
-		<!--  -->
 
 	<?php else : ?>
 
