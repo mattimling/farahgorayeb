@@ -33,3 +33,9 @@ svg {
   left: -9999px !important;
   z-index: -9999;
 }
+
+.cursor-slider {
+  cursor: url('data:image/svg+xml,<svg width="31" height="10" viewBox="0 0 31 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.757812 5.23494L5.51641 0.460938L6.62521 1.64674L3.77621 4.43414H12.4002V6.08194H3.80701L6.62521 8.85394L5.51641 10.0089L0.757812 5.23494Z" fill="black"/><path d="M30.2422 5.23494L25.4836 0.460938L24.3748 1.64674L27.2238 4.43414H18.5998V6.08194H27.193L24.3748 8.85394L25.4836 10.0089L30.2422 5.23494Z" fill="black"/></svg>')
+      15 5,
+    auto !important;
+}
