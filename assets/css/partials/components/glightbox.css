@@ -1,0 +1,23 @@
+.goverlay {
+  @apply !bg-white;
+}
+
+.gslide-media.gslide-image {
+  @apply !shadow-none;
+}
+
+.gslide-image img {
+  @apply !max-h-[100vh];
+}
+
+.glightbox-clean .gclose,
+.glightbox-clean .gnext,
+.glightbox-clean .gprev {
+  @apply !bg-transparent !outline-none;
+}
+
+.glightbox-clean .gclose path,
+.glightbox-clean .gnext path,
+.glightbox-clean .gprev path {
+  @apply !fill-black;
+}

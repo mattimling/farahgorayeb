@@ -1,5 +1,4 @@
 function barbaPageTransition() {
-
     const transitionDelay = 500,
         transitionEasing = 'easeOutCubic',
         transitionTarget = document.querySelector('.js-page-wrapper'),
@@ -7,7 +6,6 @@ function barbaPageTransition() {
         delay = (ms = transitionDelay * 2) => new Promise(resolve => setTimeout(resolve, ms));
 
     function to(data) {
-
         // Stop lenis scroll
         lenis.stop();
 
@@ -20,11 +18,9 @@ function barbaPageTransition() {
             easing: transitionEasing,
             duration: transitionDelay,
         });
-
     }
 
     function ti(data) {
-
         // Start lenis scroll
         lenis.start();
 
@@ -37,7 +33,6 @@ function barbaPageTransition() {
             easing: transitionEasing,
             duration: transitionDelay,
             complete: function () {
-
                 // Start lenis scroll
                 lenis.start();
 
@@ -49,10 +44,8 @@ function barbaPageTransition() {
                 ifFunctionExist('heroParallax');
 
                 transitionTarget.style.transform = '';
-
             }
         });
-
 
         setTimeout(timer => {
             ifFunctionExist('heroGallery');
@@ -65,8 +58,8 @@ function barbaPageTransition() {
             ifFunctionExist('heroLogoMask', 1000);
             ifFunctionExist('textareaAutoHeight');
             ifFunctionExist('initContactForm');
+            ifFunctionExist('initGlightbox');
         }, 10);
-
     }
 
     barba.init({
@@ -79,35 +72,27 @@ function barbaPageTransition() {
         timeout: 10000,
         transitions: [{
             async leave(data) {
-
                 const done = this.async();
                 to(data);
                 await delay((transitionDelay));
                 done();
-
             },
 
             async enter(data) {
-
                 ti(data);
-
             },
 
             async once(data) {
-
             },
         },],
-        prevent: ({ el }) => el.classList && el.classList.contains('_brb-prv')
+        prevent: ({ el }) => el.classList && el.classList.contains('js-barba-prevent')
     })
 
     barba.hooks.enter(() => {
-
         document.body.scrollTop = document.documentElement.scrollTop = 0;
-
     })
 
     barba.hooks.beforeEnter((data) => {
-
         // Only run during a page transition - not initial load.
         if (data.current.container) {
             const nh = data.next.html;
@@ -116,9 +101,7 @@ function barbaPageTransition() {
             const bc = dc.querySelector('notbody').getAttribute('class');
             body.setAttribute('class', bc);
         }
-
     });
-
 }
 
 barbaPageTransition();
