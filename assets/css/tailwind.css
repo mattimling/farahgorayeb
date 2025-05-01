@@ -14,6 +14,7 @@
 @import "partials/components/projects-slider.css";
 @import "partials/components/projects-filter.css";
 @import "partials/components/cf7-shortcode.css";
+@import "partials/components/glightbox.css";
 
 /* Config */
 @config './tailwind.config.js';
