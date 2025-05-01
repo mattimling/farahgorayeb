@@ -1,15 +1,11 @@
 <?php
-
 $show_preloader = get_field( 'show_preloader', 'options' );
-
 // Always show preloader for not-logged-in users.
 // For logged-in users, only show if option is enabled.
 $preloader = ( ! is_user_logged_in() || $show_preloader ) ? 1 : 0;
-
 ?>
 
 <!doctype html>
-
 <html <?php language_attributes(); ?> style="background-color: #FFF9F3; <?= $preloader ? 'overflow: hidden; pointer-events: none;' : ''; ?>">
 
 <head>
@@ -35,9 +31,7 @@ $preloader = ( ! is_user_logged_in() || $show_preloader ) ? 1 : 0;
 <?php $body_classes = 'font-m text-body cursor-crosshair text-black bg-white'; ?>
 
 <body data-barba="js-barba-wrapper" <?php body_class( $body_classes ); ?> style="<?= $preloader ? 'opacity: 0; user-select: none;' : ''; ?>">
-
 	<?php
-
 	// Tailwind breakpoints only on localhost
 	if ( is_localhost() ) {
 		get_template_part( 'components/dev/tailwind-breakpoints' );
@@ -52,13 +46,10 @@ $preloader = ( ! is_user_logged_in() || $show_preloader ) ? 1 : 0;
 
 	// Preload all media
 	// get_template_part( 'components/global/preload-media' );
-	
 	?>
 
 	<?php get_template_part( 'components/header/header-bar', null, array( 'preloader' => $preloader ) ); ?>
 
 	<div class=" page-wrapper js-page-wrapper" style="<?= $preloader ? 'opacity: 0;' : ''; ?>">
-
 		<main data-barba="js-barba-content" data-barba-namespace="<?= $wp_query->queried_object->post_name ?>">
-
 			<div class="content-wrapper js-content-wrapper relative [&.is-blurry]:blur-[10px] transition-all duration-700 ease-in-out">
