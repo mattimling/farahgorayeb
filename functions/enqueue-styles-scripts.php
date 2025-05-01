@@ -29,8 +29,8 @@ add_action( 'wp_enqueue_scripts', function () {
 	$scripts_vendor = [ 
 		'lenis.min',
 		'anime.min',
-		// 'barba_core-2.9.7',
-		'barba_core-2.10.3',
+		'barba_core-2.9.7',
+		// 'barba_core-2.10.3',
 		'swiper-bundle.min',
 		'glightbox.min',
 	];
@@ -56,6 +56,7 @@ add_action( 'wp_enqueue_scripts', function () {
 		'textarea-auto-height',
 		'init-contact-form',
 		'init-glightbox',
+		'scroll-restoration',
 	];
 
 	// Define External JS files to enqueue
