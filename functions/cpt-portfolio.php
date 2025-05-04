@@ -43,7 +43,7 @@ add_action( 'init', function () {
 		'public' => true,
 		'show_ui' => true,
 		'show_admin_column' => true,
-		'rewrite' => array( 'slug' => 'portfolio-category' ),
+		'rewrite' => array( 'slug' => 'projects/category' ),
 		'show_in_rest' => true, // Enable the block editor (Gutenberg) for the taxonomy
 	) );
 } );

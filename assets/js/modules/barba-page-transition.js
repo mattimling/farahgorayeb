@@ -38,8 +38,6 @@ function barbaPageTransition() {
 
                 ifFunctionExist('footerLink');
                 ifFunctionExist('footerTitle');
-                ifFunctionExist('projectsFilter');
-                ifFunctionExist('parentFilter');
                 ifFunctionExist('projectsSlider');
                 ifFunctionExist('heroParallax');
 

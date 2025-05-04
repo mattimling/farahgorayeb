@@ -48,7 +48,6 @@ add_action( 'wp_enqueue_scripts', function () {
 		'element-blurin',
 		'footer-link',
 		'footer-title',
-		'projects-filter',
 		'image-image',
 		'prev-next',
 		'projects-slider',

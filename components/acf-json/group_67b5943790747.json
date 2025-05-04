@@ -639,29 +639,7 @@
                     "name": "portfolio",
                     "label": "Portfolio",
                     "display": "row",
-                    "sub_fields": [
-                        {
-                            "key": "field_67b72f1d4fbda",
-                            "label": "Show filter",
-                            "name": "show_filter",
-                            "aria-label": "",
-                            "type": "true_false",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "message": "",
-                            "default_value": 0,
-                            "allow_in_bindings": 0,
-                            "ui_on_text": "",
-                            "ui_off_text": "",
-                            "ui": 1
-                        }
-                    ],
+                    "sub_fields": [],
                     "min": "",
                     "max": ""
                 },
@@ -725,27 +703,6 @@
                     "label": "Showroom",
                     "display": "row",
                     "sub_fields": [
-                        {
-                            "key": "field_67b8459d1e44a",
-                            "label": "Show filter",
-                            "name": "show_filter",
-                            "aria-label": "",
-                            "type": "true_false",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "message": "",
-                            "default_value": 0,
-                            "allow_in_bindings": 0,
-                            "ui_on_text": "",
-                            "ui_off_text": "",
-                            "ui": 1
-                        },
                         {
                             "key": "field_6800bec975989",
                             "label": "Category Limit",
@@ -1159,5 +1116,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1745317490
+    "modified": 1746366728
 }
