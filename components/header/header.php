@@ -36,12 +36,26 @@ $preloader = ( ! is_user_logged_in() || $show_preloader ) ? 1 : 0;
 	if ( is_localhost() ) {
 		get_template_part( 'components/dev/tailwind-breakpoints' );
 
-		// get_template_part( 'components/dev/menu' );
+		get_template_part( 'components/dev/menu' );
 	}
 
 	// Preloader only if preloader = true
 	if ( $preloader ) {
 		get_template_part( 'components/global/preloader', null, array( 'preloader' => $preloader ) );
+	}
+
+	if ( is_localhost() ) {
+		?>
+		<style>
+			body::-webkit-scrollbar {
+				width: 5px !important;
+			}
+
+			body::-webkit-scrollbar-thumb {
+				background-color: red !important;
+			}
+		</style>
+		<?php
 	}
 
 	// Preload all media
@@ -50,6 +64,6 @@ $preloader = ( ! is_user_logged_in() || $show_preloader ) ? 1 : 0;
 
 	<?php get_template_part( 'components/header/header-bar', null, array( 'preloader' => $preloader ) ); ?>
 
-	<div class=" page-wrapper js-page-wrapper" style="<?= $preloader ? 'opacity: 0;' : ''; ?>">
+	<div class="page-wrapper js-page-wrapper" style="<?= $preloader ? 'opacity: 0;' : ''; ?>">
 		<main data-barba="js-barba-content" data-barba-namespace="<?= $wp_query->queried_object->post_name ?>">
 			<div class="content-wrapper js-content-wrapper relative [&.is-blurry]:blur-[10px] transition-all duration-700 ease-in-out">
