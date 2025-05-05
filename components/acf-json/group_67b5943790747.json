@@ -702,31 +702,7 @@
                     "name": "showroom",
                     "label": "Showroom",
                     "display": "row",
-                    "sub_fields": [
-                        {
-                            "key": "field_6800bec975989",
-                            "label": "Category Limit",
-                            "name": "category_limit",
-                            "aria-label": "",
-                            "type": "number",
-                            "instructions": "Maximum number of items displayed per category when 'All' products are shown.",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": 2,
-                            "min": "",
-                            "max": "",
-                            "allow_in_bindings": 0,
-                            "placeholder": "",
-                            "step": "",
-                            "prepend": "",
-                            "append": ""
-                        }
-                    ],
+                    "sub_fields": [],
                     "min": "",
                     "max": ""
                 },
@@ -1116,5 +1092,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1746366728
+    "modified": 1746429755
 }
