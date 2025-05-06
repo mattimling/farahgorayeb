@@ -6,7 +6,7 @@ $description = get_sub_field( 'description' );
 <?php if ( $video_link ) : ?>
 	<div class="px-5 w-full flex flex-col gap-y-[10px]">
 		<div class="overflow-hidden js-element-blurin">
-			<!-- <a href="<?= $video_link; ?>" class="glightbox js-barba-prevent" data-gallery="gallery">
+			<!-- <a href="<?= $video_link; ?>" class="glightbox js-barba-prevent" data-gallery="gallery" aria-label="Image gallery">
 				<video preload="auto" muted playsinline autoplay loop controls class="w-full h-full object-cover">
 					<source src="<?= $video_link; ?>" type="video/mp4">
 				</video>

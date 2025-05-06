@@ -11,17 +11,11 @@ $order = get_sub_field( 'order' );
 <div class="px-5 grid grid-cols-12 gap-x-5 gap-y-[60px] js-image-image">
 	<div class="<?= $order == 'big-small' ? '' : 'order-2'; ?> col-span-12 md:col-span-6 flex flex-col gap-y-[10px]">
 		<?php if ( ! empty( $video_big ) ) : ?>
-			<!-- <a href="<?= $video_big; ?>" class="glightbox js-barba-prevent" data-gallery="gallery">
-				<video preload="auto" muted playsinline autoplay loop controls class="w-full h-full object-cover">
-					<source src="<?= $video_big; ?>" type="video/mp4">
-				</video>
-			</a> -->
-
 			<video preload="auto" muted playsinline autoplay loop controls class="w-full h-full object-cover">
 				<source src="<?= $video_big; ?>" type="video/mp4">
 			</video>
 		<?php else : ?>
-			<a href="<?= wp_get_attachment_image_src( $image_1, 'xl' )[0]; ?>" class="glightbox js-barba-prevent" data-gallery="gallery">
+			<a href="<?= wp_get_attachment_image_src( $image_1, 'xl' )[0]; ?>" class="glightbox js-barba-prevent" data-gallery="gallery" aria-label="Image gallery">
 				<?= mi_get_image( $image_1, 'xl', 'w-full js-element-blurin relative' ); ?>
 			</a>
 		<?php endif; ?>
@@ -39,8 +33,8 @@ $order = get_sub_field( 'order' );
 				<source src="<?= $video_small; ?>" type="video/mp4">
 			</video>
 		<?php else : ?>
-			<a href="<?= wp_get_attachment_image_src( $image_2, 'xl' )[0]; ?>" class="glightbox js-barba-prevent" data-gallery="gallery">
-				<?= mi_get_image( $image_2, 'xl', 'md:w-3/4 lg:w-1/2 js-element-blurin relative' ); ?>
+			<a href="<?= wp_get_attachment_image_src( $image_2, 'xl' )[0]; ?>" class="md:w-3/4 lg:w-1/2 glightbox js-barba-prevent" data-gallery="gallery" aria-label="Image gallery">
+				<?= mi_get_image( $image_2, 'xl', 'js-element-blurin relative' ); ?>
 			</a>
 		<?php endif; ?>
 

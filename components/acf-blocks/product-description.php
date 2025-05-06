@@ -34,7 +34,7 @@ $terms = get_the_terms( get_the_ID(), 'showroom_category' );
 			</div>
 
 			<div class="col-span-12 md:col-span-6 js-element-blurin max-md::order-1">
-				<a href="<?= wp_get_attachment_image_src( $image, 'xl' )[0]; ?>" class="glightbox js-barba-prevent" data-gallery="gallery">
+				<a href="<?= wp_get_attachment_image_src( $image, 'xl' )[0]; ?>" class="glightbox js-barba-prevent" data-gallery="gallery" aria-label="Image gallery">
 					<?= mi_get_image( $image, 'xl', 'w-full' ); ?>
 				</a>
 			</div>
