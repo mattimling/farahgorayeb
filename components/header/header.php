@@ -36,7 +36,7 @@ $preloader = ( ! is_user_logged_in() || $show_preloader ) ? 1 : 0;
 	if ( is_localhost() ) {
 		get_template_part( 'components/dev/tailwind-breakpoints' );
 
-		get_template_part( 'components/dev/menu' );
+		// get_template_part( 'components/dev/menu' );
 	}
 
 	// Preloader only if preloader = true
@@ -62,8 +62,10 @@ $preloader = ( ! is_user_logged_in() || $show_preloader ) ? 1 : 0;
 	// get_template_part( 'components/global/preload-media' );
 	?>
 
-	<?php get_template_part( 'components/header/header-bar', null, array( 'preloader' => $preloader ) ); ?>
-
 	<div class="page-wrapper js-page-wrapper" style="<?= $preloader ? 'opacity: 0;' : ''; ?>">
 		<main data-barba="js-barba-content" data-barba-namespace="<?= $wp_query->queried_object->post_name ?>">
-			<div class="content-wrapper js-content-wrapper relative [&.is-blurry]:blur-[10px] transition-all duration-700 ease-in-out">
+			<?php get_template_part( 'components/header/header-bar', null, array( 'preloader' => $preloader ) ); ?>
+
+			<div class="js-page-transition">
+
+				<div class="content-wrapper js-content-wrapper relative [&.is-blurry]:blur-[10px] transition-all duration-700 ease-in-out">
