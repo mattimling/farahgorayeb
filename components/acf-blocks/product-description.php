@@ -11,7 +11,9 @@ $terms = get_the_terms( get_the_ID(), 'showroom_category' );
 	<?php if ( ! is_wp_error( $terms ) && ! empty( $terms ) ) : ?>
 		<div class="text-h3 text-gray-500 js-element-blurin">
 			<?php foreach ( $terms as $index => $term ) : ?>
-				<span><?= esc_html( $term->name ); ?><?= $index < count( $terms ) - 1 ? ',' : ''; ?></span>
+				<a href="<?= esc_url( get_term_link( $term ) ); ?>" class="hover:underline">
+					<?= esc_html( $term->name ); ?>
+				</a><?= $index < count( $terms ) - 1 ? ', ' : ''; ?>
 			<?php endforeach; ?>
 		</div>
 	<?php endif; ?>
