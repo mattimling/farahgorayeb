@@ -8,7 +8,7 @@ function menu() {
             const menuOpen = document.querySelector('.js-menu-open');
             const menuClose = document.querySelector('.js-menu-close');
             const contentWrapper = document.querySelector('.js-content-wrapper');
-            const logo = document.querySelector('.js-logo');
+            const logo = document.querySelectorAll('.js-logo');
 
             // Open menu
             if (self.classList.contains('js-menu-open')) {
@@ -16,7 +16,7 @@ function menu() {
                 menuClose.classList.remove('is-hidden');
                 menu.classList.remove('is-close');
                 contentWrapper.classList.add('is-blurry');
-                logo.classList.add('is-inactive');
+                logo.forEach(item => { item.classList.add('is-inactive'); });
             }
 
             // Close menu
@@ -25,7 +25,7 @@ function menu() {
                 menuClose.classList.add('is-hidden');
                 menu.classList.add('is-close');
                 contentWrapper.classList.remove('is-blurry');
-                logo.classList.remove('is-inactive');
+                logo.forEach(item => { item.classList.remove('is-inactive'); });
             }
 
             // Link clicked = close menu
@@ -34,7 +34,7 @@ function menu() {
                 menuClose.classList.add('is-hidden');
                 menu.classList.add('is-close');
                 contentWrapper.classList.remove('is-blurry');
-                logo.classList.remove('is-inactive');
+                logo.forEach(item => { item.classList.remove('is-inactive'); });
 
                 // Change active link
                 setTimeout(timer => {

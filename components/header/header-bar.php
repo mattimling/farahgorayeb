@@ -1,5 +1,6 @@
 <?php
 $preloader = $args['preloader'] ?? false;
+$website_title = get_field( 'website_title', 'options' );
 $logo = get_field( 'logo', 'options' );
 $menu_open_text = get_field( 'menu_open_text', 'options' );
 $menu_open_icon = get_field( 'menu_open_icon', 'options' );
@@ -9,30 +10,42 @@ $menu_close_icon = get_field( 'menu_close_icon', 'options' );
 
 <!-- Header -->
 <div class="fixed top-0 left-0 z-50 w-full translate-y-0 js-header-bar">
-	<div class="flex justify-between overflow-hidden text-black relative">
-		<a href="<?= home_url( '/' ) ?>" class="w-24 flex [&_path]:fill-black p-5 md:hover:opacity-60 transition-opacity duration-300 js-logo [&.is-inactive]:pointer-events-none" aria-label="<?= esc_attr( get_bloginfo( 'name' ) ); ?>">
-			<?= $logo; ?>
-		</a>
+	<div class="grid grid-cols-3 overflow-hidden text-black relative">
+		<div class="flex items-center pl-5">
+			<a href="<?= home_url( '/' ) ?>" class="body-link js-logo [&.is-inactive]:pointer-events-none" aria-label="<?= $website_title; ?>">
+				<span class="body-link-text">
+					<?= $website_title; ?>
+				</span>
+			</a>
+		</div>
 
-		<a href="#" class="body-link absolute top-0 right-0 flex items-center h-full [&_path]:fill-black text-black p-5 scale-110 js-menu-open prevent-children [&.is-hidden]:opacity-0 [&.is-hidden]:pointer-events-none transition-all duration-300" aria-label="<?= $menu_open_text; ?>">
-			<span class="mr-[10px] body-link-text">
-				<?= $menu_open_text; ?>
-			</span>
+		<div class="flex justify-center items-center">
+			<a href="<?= home_url( '/' ) ?>" class="w-24 flex [&_path]:fill-black p-5 md:hover:opacity-60 transition-opacity duration-300 js-logo [&.is-inactive]:pointer-events-none" aria-label="<?= esc_attr( get_bloginfo( 'name' ) ); ?>">
+				<?= $logo; ?>
+			</a>
+		</div>
 
-			<span class="">
+		<div class="">
+			<a href="#" class="body-link absolute top-0 right-0 flex items-center h-full [&_path]:fill-black text-black p-5 scale-110 js-menu-open prevent-children [&.is-hidden]:opacity-0 [&.is-hidden]:pointer-events-none transition-all duration-300" aria-label="<?= $menu_open_text; ?>">
+				<span class="mr-[2px] body-link-text">
+					<?= $menu_open_text; ?>
+				</span>
+
+				<!-- <span class="">
 				<?= $menu_open_icon; ?>
-			</span>
-		</a>
+			</span> -->
+			</a>
 
-		<a href="#" class="body-link absolute top-0 right-0 flex items-center h-full [&_path]:fill-black text-black p-5 scale-110 js-menu-close [&.is-hidden]:opacity-0 [&.is-hidden]:pointer-events-none is-hidden prevent-children transition-all duration-300" aria-label="<?= $menu_close_text; ?>">
-			<span class="mr-[10px] body-link-text">
-				<?= $menu_close_text; ?>
-			</span>
+			<a href="#" class="body-link absolute top-0 right-0 flex items-center h-full [&_path]:fill-black text-black p-5 scale-110 js-menu-close [&.is-hidden]:opacity-0 [&.is-hidden]:pointer-events-none is-hidden prevent-children transition-all duration-300" aria-label="<?= $menu_close_text; ?>">
+				<span class="mr-[2px] body-link-text">
+					<?= $menu_close_text; ?>
+				</span>
 
-			<span class="">
+				<!-- <span class="">
 				<?= $menu_close_icon; ?>
-			</span>
-		</a>
+			</span> -->
+			</a>
+		</div>
 	</div>
 
 	<div class="mx-5 border-b"></div>

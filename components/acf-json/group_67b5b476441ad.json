@@ -130,6 +130,27 @@
             "selected": 0
         },
         {
+            "key": "field_681a11431d1da",
+            "label": "Website Title",
+            "name": "website_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_67b5b476bece9",
             "label": "Logo",
             "name": "logo",
@@ -742,5 +763,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1746522251
+    "modified": 1746538860
 }
