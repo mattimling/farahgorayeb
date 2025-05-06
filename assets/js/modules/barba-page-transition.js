@@ -1,7 +1,7 @@
 function barbaPageTransition() {
     const transitionDelay = 500,
         transitionEasing = 'easeOutCubic',
-        transitionTarget = document.querySelector('.js-page-wrapper'),
+        transitionTarget = ['.js-page-transition'],
         transitionY = 30,
         delay = (ms = transitionDelay * 2) => new Promise(resolve => setTimeout(resolve, ms));
 
@@ -40,8 +40,9 @@ function barbaPageTransition() {
                 ifFunctionExist('footerTitle');
                 ifFunctionExist('projectsSlider');
                 ifFunctionExist('heroParallax');
+                ifFunctionExist('menuActiveItem');
 
-                transitionTarget.style.transform = '';
+                // transitionTarget.style.transform = '';
             }
         });
 
@@ -51,7 +52,6 @@ function barbaPageTransition() {
             ifFunctionExist('imageImageHeight');
             ifFunctionExist('prevNextHoverEffect');
             ifFunctionExist('projectsItemHover');
-            ifFunctionExist('menuActiveItem');
             ifFunctionExist('heroVideoAutoplay');
             ifFunctionExist('heroLogoMask', 1000);
             ifFunctionExist('textareaAutoHeight');
