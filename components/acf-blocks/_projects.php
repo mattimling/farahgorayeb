@@ -17,15 +17,26 @@ $terms = get_terms( array(
 <?php if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) : ?>
 	<?php
 	// Count all published posts for the current post type
-	$post_type_object = get_post_type_object( $post_type );
-	$all_count = wp_count_posts( $post_type )->publish;
+	// $post_type_object = get_post_type_object( $post_type );
+	$current_lang = apply_filters( 'wpml_current_language', null );
+
+	$all_query = new WP_Query( [ 
+		'post_type' => $post_type,
+		'post_status' => 'publish',
+		'lang' => $current_lang, // WPML language filter
+		'posts_per_page' => -1,
+		'fields' => 'ids', // optimize performance
+	] );
+
+	$all_count = $all_query->found_posts;
 	?>
 
 	<div class="px-5 text-h1 flex flex-wrap [&_.item:last-child_.comma]:hidden">
 		<div class="flex item">
 			<a href="<?php echo esc_url( $page = $post_type == 'portfolio' ? $portfolio_page : $showroom_page ); ?>" class="body-link-h1 [&.is-active]:border-b-black <?php if ( ! is_tax( $post_type . '_category' ) )
 							 echo 'is-active'; ?>">
-				All <span class="relative -top-[5px]">(</span><?= $all_count; ?><span class="relative -top-[5px]">)</span>
+				<?php _e( 'All', 'fargor' ); ?>
+				<span class="relative -top-[5px]">(</span><?= $all_count; ?><span class="relative -top-[5px]">)</span>
 			</a>
 			<span class="mr-5 comma">,</span>
 		</div>
