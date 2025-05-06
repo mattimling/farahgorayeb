@@ -12,7 +12,8 @@
 
 		<?php
 		if ( is_singular( [ 'portfolio', 'showroom' ] ) ) {
-			get_template_part( 'components/acf-blocks/_prev-next-project' );
+			// get_template_part( 'components/acf-blocks/_prev-next-project' );
+			get_template_part( 'components/acf-blocks/_related-projects' );
 		}
 		?>
 	</div>
