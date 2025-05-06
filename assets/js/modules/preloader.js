@@ -50,12 +50,12 @@ function preloader() {
                                     }
                                 });
 
-                                anime({
+                                /* anime({
                                     targets: document.querySelector('.js-header-bar'),
                                     opacity: [0, 1],
                                     easing: prelTransitionEasing,
                                     duration: prelTransitionDelay,
-                                });
+                                }); */
                             }
                         });
                     }, 2000);
