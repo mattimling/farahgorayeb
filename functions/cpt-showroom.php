@@ -1,6 +1,17 @@
 <?php
 
 add_action( 'init', function () {
+
+	// Register translatable slugs (run once or on init)
+	if ( function_exists( 'icl_register_string' ) ) {
+		icl_register_string( 'Slug', 'showroom_slug', 'product' );
+		icl_register_string( 'Slug', 'showroom_category_slug', 'showroom/category' );
+	}
+
+	// Get translated slugs
+	$showroom_slug = function_exists( 'icl_t' ) ? icl_t( 'Slug', 'showroom_slug', 'product' ) : 'product';
+	$showroom_category_slug = function_exists( 'icl_t' ) ? icl_t( 'Slug', 'showroom_category_slug', 'showroom/category' ) : 'showroom/category';
+
 	// Register the 'showroom' custom post type
 	register_post_type( 'showroom',
 		array(
@@ -18,14 +29,14 @@ add_action( 'init', function () {
 			),
 			'public' => true,
 			'has_archive' => true,
-			'rewrite' => array( 'slug' => 'product' ),
-			'supports' => array( 'title', 'thumbnail', 'editor' ), // Added 'editor' support for content editing
-			'show_in_rest' => true, // Enable the block editor (Gutenberg)
+			'rewrite' => array( 'slug' => $showroom_slug ),
+			'supports' => array( 'title', 'thumbnail', 'editor' ),
+			'show_in_rest' => true,
 		)
 	);
 
 	// Register the custom taxonomy 'showroom_category'
-	register_taxonomy( 'showroom_category', 'showroom', array( // Corrected the post type slug to lowercase 'showroom'
+	register_taxonomy( 'showroom_category', 'showroom', array(
 		'labels' => array(
 			'name' => __( 'Showroom Categories', 'fargor' ),
 			'singular_name' => __( 'Showroom Category', 'fargor' ),
@@ -39,12 +50,11 @@ add_action( 'init', function () {
 			'new_item_name' => __( 'New Showroom Category Name', 'fargor' ),
 			'menu_name' => __( 'Showroom Categories', 'fargor' ),
 		),
-		'hierarchical' => true, // Set to true to make it behave like categories
+		'hierarchical' => true,
 		'public' => true,
 		'show_ui' => true,
 		'show_admin_column' => true,
-		'rewrite' => array( 'slug' => 'showroom/category' ),
-		'show_in_rest' => true, // Enable the block editor (Gutenberg) for the taxonomy
+		'rewrite' => array( 'slug' => $showroom_category_slug ),
+		'show_in_rest' => true,
 	) );
 } );
-?>

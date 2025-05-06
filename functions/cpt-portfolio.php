@@ -1,6 +1,17 @@
 <?php
 
 add_action( 'init', function () {
+
+	// Register slugs as translatable strings (register only once)
+	if ( function_exists( 'icl_register_string' ) ) {
+		icl_register_string( 'Slug', 'portfolio_slug', 'project' );
+		icl_register_string( 'Slug', 'portfolio_category_slug', 'projects/category' );
+	}
+
+	// Get translated slugs
+	$portfolio_slug = function_exists( 'icl_t' ) ? icl_t( 'Slug', 'portfolio_slug', 'project' ) : 'project';
+	$portfolio_category_slug = function_exists( 'icl_t' ) ? icl_t( 'Slug', 'portfolio_category_slug', 'projects/category' ) : 'projects/category';
+
 	// Register the 'portfolio' custom post type
 	register_post_type( 'portfolio',
 		array(
@@ -18,14 +29,14 @@ add_action( 'init', function () {
 			),
 			'public' => true,
 			'has_archive' => true,
-			'rewrite' => array( 'slug' => 'project' ),
-			'supports' => array( 'title', 'thumbnail', 'editor' ), // Added 'editor' support for content editing
-			'show_in_rest' => true, // Enable the block editor (Gutenberg)
+			'rewrite' => array( 'slug' => $portfolio_slug ),
+			'supports' => array( 'title', 'thumbnail', 'editor' ),
+			'show_in_rest' => true,
 		)
 	);
 
 	// Register the custom taxonomy 'portfolio_category'
-	register_taxonomy( 'portfolio_category', 'portfolio', array( // Corrected the post type slug to lowercase 'portfolio'
+	register_taxonomy( 'portfolio_category', 'portfolio', array(
 		'labels' => array(
 			'name' => __( 'Portfolio Categories', 'fargor' ),
 			'singular_name' => __( 'Portfolio Category', 'fargor' ),
@@ -39,11 +50,11 @@ add_action( 'init', function () {
 			'new_item_name' => __( 'New Portfolio Category Name', 'fargor' ),
 			'menu_name' => __( 'Portfolio Categories', 'fargor' ),
 		),
-		'hierarchical' => true, // Set to true to make it behave like categories
+		'hierarchical' => true,
 		'public' => true,
 		'show_ui' => true,
 		'show_admin_column' => true,
-		'rewrite' => array( 'slug' => 'projects/category' ),
-		'show_in_rest' => true, // Enable the block editor (Gutenberg) for the taxonomy
+		'rewrite' => array( 'slug' => $portfolio_category_slug ),
+		'show_in_rest' => true,
 	) );
 } );

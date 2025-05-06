@@ -317,6 +317,48 @@
             "allow_in_bindings": 0
         },
         {
+            "key": "field_6818be7068e9a",
+            "label": "Related Projects Title",
+            "name": "related_projects_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_6819d01c603fd",
+            "label": "View All Projects Title",
+            "name": "view_all_projects_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_6817752da5dc5",
             "label": "Showroom",
             "name": "",
@@ -355,6 +397,48 @@
             "multiple": 0,
             "allow_null": 0,
             "allow_in_bindings": 0
+        },
+        {
+            "key": "field_6818beb452237",
+            "label": "Related Products Title",
+            "name": "related_products_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_6819d07d603fe",
+            "label": "View All Products Title",
+            "name": "view_all_products_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_67b5e0324bd1d",
@@ -520,9 +604,9 @@
                     },
                     "default_value": "",
                     "allow_in_bindings": 0,
-                    "tabs": "all",
+                    "tabs": "visual",
                     "toolbar": "full",
-                    "media_upload": 1,
+                    "media_upload": 0,
                     "delay": 0,
                     "parent_repeater": "field_67b5e0864e6ab"
                 }
@@ -599,11 +683,11 @@
             "preview_size": "medium"
         },
         {
-            "key": "field_67b5e227632ea",
-            "label": "Copyright",
-            "name": "copyright",
+            "key": "field_681886d1c7d2a",
+            "label": "Back Link",
+            "name": "back_link",
             "aria-label": "",
-            "type": "wysiwyg",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -613,11 +697,31 @@
                 "id": ""
             },
             "default_value": "",
+            "maxlength": "",
             "allow_in_bindings": 1,
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 1,
-            "delay": 0
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_67b5e227632ea",
+            "label": "Copyright",
+            "name": "copyright",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         }
     ],
     "location": [
@@ -638,5 +742,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1746367828
+    "modified": 1746522251
 }
