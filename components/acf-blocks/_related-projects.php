@@ -63,7 +63,7 @@ if ( $primary_term ) {
 
 	<!-- Slider -->
 	<div class="projects-slider">
-		<div class="px-5 js-swip overflow-hidden">
+		<div class="px-5 js-swip overflow-hidden pb-[30px] -mb-[30px]">
 			<div class="swiper-wrapper flex items-end cursor-slider">
 				<?php foreach ( $items as $post ) : ?>
 					<div class="swiper-slide mr-5 [&:last-of-type]:mr-0 js-element-blurin !w-[calc(55%-(20px/2))] sm:!w-[calc(40%-(40px/3))] md:!w-[calc(28.57%-(60px/4))] lg:!w-[calc(22.22%-(80px/5))] 2xl:!w-[calc(18.18%-(100px/6))]">

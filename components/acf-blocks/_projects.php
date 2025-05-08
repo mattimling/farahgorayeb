@@ -32,7 +32,7 @@ $terms = get_terms( array(
 	?>
 
 	<div class="px-5 text-h1 flex flex-wrap [&_.item:last-child_.comma]:hidden">
-		<div class="flex item">
+		<div class="flex item js-element-blurin">
 			<a href="<?php echo esc_url( $page = $post_type == 'portfolio' ? $portfolio_page : $showroom_page ); ?>" class="body-link-h1 [&.is-active]:border-b-black <?php if ( ! is_tax( $post_type . '_category' ) )
 							 echo 'is-active'; ?>">
 				<?php _e( 'All', 'fargor' ); ?>
@@ -53,7 +53,7 @@ $terms = get_terms( array(
 				$current_term->parent === $term->term_id     // current term is child of this parent
 			);
 			?>
-			<div class="flex item">
+			<div class="flex item js-element-blurin">
 				<a href="<?= esc_url( get_term_link( $term ) ); ?>" class="body-link-h1 [&.is-active]:border-b-black <?php if ( $is_active )
 						  echo 'is-active'; ?>" data-category="<?= esc_html( $term->slug ); ?>">
 					<?= esc_html( $term->name ); ?>
@@ -92,7 +92,7 @@ $terms = get_terms( array(
 				<?php foreach ( $children as $term ) :
 					$is_active = $current_term && $current_term->term_id === $term->term_id;
 					?>
-					<div class="item flex">
+					<div class="item flex js-element-blurin">
 						<a href="<?= esc_url( get_term_link( $term ) ); ?>" class="body-link-h3 body-link-h1 [&.is-active]:border-b-black <?php if ( $is_active )
 								  echo 'is-active'; ?>">
 							<?= esc_html( $term->name ); ?>

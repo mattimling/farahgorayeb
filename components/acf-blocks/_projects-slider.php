@@ -8,7 +8,7 @@ $link = get_sub_field( 'link' );
 <!-- Slider -->
 <div class="projects-slider">
 	<?php if ( $items ) : ?>
-		<div class="px-5 js-swip overflow-hidden">
+		<div class="px-5 js-swip overflow-hidden pb-[30px] -mb-[30px]">
 			<div class="swiper-wrapper flex items-end cursor-slider">
 				<?php foreach ( $items as $post ) : ?>
 					<div class="swiper-slide mr-5 [&:last-of-type]:mr-0 js-element-blurin <?= $slider_type == 'projects' ? '!w-[calc(66.66%-(20px/2))] md:!w-[calc(40%-(40px/3))] 2xl:!w-[calc(28.57%-(60px/4))]' : '!w-[calc(55%-(20px/2))] sm:!w-[calc(40%-(40px/3))] md:!w-[calc(28.57%-(60px/4))] lg:!w-[calc(22.22%-(80px/5))] 2xl:!w-[calc(18.18%-(100px/6))]'; ?>">

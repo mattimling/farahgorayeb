@@ -29,8 +29,8 @@ $terms = get_the_terms( get_the_ID(), 'showroom_category' );
 
 	<?php if ( $description ) : ?>
 		<div class="grid grid-cols-12 gap-x-5 gap-y-[60px]">
-			<div class="col-span-12 md:col-span-6 js-element-blurin max-md:order-2">
-				<div class="flex flex-col gap-y-5 body-links-inverted max-w-[500px]">
+			<div class="col-span-12 md:col-span-6 max-md:order-2">
+				<div class="flex flex-col gap-y-5 body-links-inverted max-w-[500px] js-element-blurin">
 					<?= $description; ?>
 				</div>
 			</div>
