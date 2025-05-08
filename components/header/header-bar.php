@@ -48,7 +48,7 @@ $menu_close_icon = get_field( 'menu_close_icon', 'options' );
 		</div>
 	</div>
 
-	<div class="mx-5 border-b"></div>
+	<!-- <div class="mx-5 border-b"></div> -->
 </div>
 
 <!-- Menu -->
@@ -124,13 +124,6 @@ $menu_close_icon = get_field( 'menu_close_icon', 'options' );
 				}
 			}
 			?>
-
-			<!-- <a href="#" class="body-link-h1 [&.is-active]:border-b-black is-active">
-				EN
-			</a>,
-			<a href="#" class="ml-5 body-link-h1">
-				FR
-			</a> -->
 		</div>
 	</div>
 </div>
