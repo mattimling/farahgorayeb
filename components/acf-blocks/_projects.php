@@ -87,7 +87,7 @@ $terms = get_terms( array(
 			$is_parent_active = $current_term && $current_term->term_id === $parent_id;
 			$is_container_active = $is_child_active || $is_parent_active;
 			?>
-			<div class="hidden text-h3 [&_.item:last-child_.comma]:hidden [&.is-active]:flex <?php if ( $is_container_active )
+			<div class="hidden text-h3 [&_.item:last-child_.comma]:hidden [&.is-active]:flex flex-wrap <?php if ( $is_container_active )
 				echo 'is-active'; ?>" data-category="<?= esc_attr( $parent_term->slug ); ?>">
 				<?php foreach ( $children as $term ) :
 					$is_active = $current_term && $current_term->term_id === $term->term_id;
